@@ -10,10 +10,7 @@ link_list_label: "Interests" # bookmarks, elsewhere, etc.
 link_list:
 - name: Statistical Computing
   url: https://www.r-project.org/
-- name: Pastries
-  url: https://en.wikipedia.org/wiki/Pastry
-- name: People
-  url: https://en.wikipedia.org/wiki/People
+
 ---
 
 ** index doesn't contain a body, just front matter above.

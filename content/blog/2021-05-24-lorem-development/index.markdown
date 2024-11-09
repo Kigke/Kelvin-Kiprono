@@ -1,9 +1,9 @@
 ---
-title: "Lorem Arrested Development"
-subtitle: "How to add panelsets in R Markdown posts."
+title: "Disaggregated data from surveyst"
+subtitle: "How to analyze survey data."
 excerpt: "Add tabbed sections with code and results."
-date: 2021-05-24
-author: "Alison Hill"
+date: 2024-09-24
+author: "Kelvin Kiprono"
 draft: false
 # layout options: single, single-sidebar
 layout: single
@@ -11,7 +11,6 @@ categories:
 - evergreen
 ---
 
-## Where am i?
 
 ``` r
 library(palmerpenguins)
