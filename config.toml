@@ -74,7 +74,7 @@ enableEmoji = true
   # Icon pack "fas" includes solid icons, see: https://fontawesome.com/icons?d=gallery&s=solid&m=free
   # Icon pack "far" includes regular icons, see: https://fontawesome.com/icons?d=gallery&s=regular&m=free
   [[params.social]]
-      icon      = "github" # icon name without the 'fa-'
+      icon      = "youtube" # icon name without the 'fa-'
       icon_pack = "fab"
       url       = "https://github.com/apreshill/apero"
   [[params.social]]
