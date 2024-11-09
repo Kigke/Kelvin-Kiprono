@@ -1,5 +1,5 @@
 ---
-title: "Disaggregated data from surveyst"
+title: "Disaggregated data from surveys"
 subtitle: "How to analyze survey data."
 excerpt: "Add tabbed sections with code and results."
 date: 2024-09-24
