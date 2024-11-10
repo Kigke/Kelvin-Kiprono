@@ -20,8 +20,7 @@ sidebar:
     Check out the _index.md file in the /blog folder 
     to edit this content. 
   author: "Kelvin Kiprono"
-  text_link_label: Subscribe via RSS
-  text_link_url: /index.xml
+ 
   show_sidebar_adunit: false # show ad container
 
 # set up common front matter for all pages inside blog/
