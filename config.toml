@@ -114,7 +114,11 @@ enableEmoji = true
     title = "Kelvin Kiprono: Blog"
     url = "/blog/"
     weight = 2
- 
+   [[menu.header]]
+    name = "Projects"
+    title = "Kelvin Kiprono: Projects"
+    url = "/Projects/"
+    weight = 2
     
   # Configure footer  
   [[menu.footer]]
