@@ -6,7 +6,7 @@ date: 2024-02-18T12:27:33-06:00
 images:
   - img/imagee.jpeg
 image_left: true
-text_align_left: false
+text_align_left: true
 show_social_links: true # specify social accounts in site config
 show_action_link: true
 action_link: /about
