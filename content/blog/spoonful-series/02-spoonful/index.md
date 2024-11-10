@@ -2,12 +2,12 @@
 title: "A second post"
 weight: 2
 subtitle: ""
-excerpt: "Grid is the very first CSS module created specifically to solve the layout problems we’ve all been hacking our way around for as long as we’ve been making websites."
-date: 2021-01-02
+excerpt: "R is a powerful statistical programming language used for data analysis, visualization, and modeling. Its flexibility and rich package ecosystem make it ideal for everything from basic summaries to complex analytics. In this blog, I’ll explore practical ways to use R for insightful data analysis and data-driven decisions. Even this sidebar offers a ton of customizations!"
+date: 2024-09-01
 draft: false
 ---
 
-{{< here >}}
+
 
 
 ## part 2!
