@@ -200,66 +200,187 @@ sample_data1 %>%
 ```
 
 
-## But first, panelsets with R code chunks
+``` r
+sample_data1_a <- sample_data1 %>% 
+  mutate(sba =
+           if_else(m3a=='yes' |
+                   m3b=='yes' |
+                   m3c=='yes' |
+                   m3d=='yes',
+                   1,0,0))
+```
 
-{{< panelset class="greetings" >}}
-{{< panel name="Plot" >}}
+``` r
+count(sample_data1_a,sba)
+```
 
-<img src="{{< blogdown/postref >}}index_files/figure-html/plot-1.png" width="672" />
+```
+## # A tibble: 2 × 2
+##     sba     n
+##   <dbl> <int>
+## 1     0   605
+## 2     1  2072
+```
 
-{{< /panel >}}
-{{< panel name="Code" >}}
+``` r
+## Constructing Inequality dimensions
+## Mothers age
+```
+
+``` r
+str(sample_data1_a$v012)
+```
+
+```
+##  num [1:2677] 31 24 37 26 37 34 32 35 24 31 ...
+```
+
+``` r
+##Categorizing mothers age into 3 subgroups
+
+sample_data1_b <- sample_data1_a %>% 
+  mutate(mage=
+           as.factor(case_when(
+             v012 < 20 ~ '15 - 19 years',
+             v012 >= 20 ~ '20 - 34 years',
+             v012 >=35 & v012 <= 49 ~ '34 - 49 years'
+           )))
+```
+
+``` r
+count(sample_data1_b,mage)
+```
+
+```
+## # A tibble: 2 × 2
+##   mage              n
+##   <fct>         <int>
+## 1 15 - 19 years    72
+## 2 20 - 34 years  2605
+```
+
+``` r
+levels(sample_data1_b$mage)
+```
+
+```
+## [1] "15 - 19 years" "20 - 34 years"
+```
+
+``` r
+## Socioeconomic status (variable v190)
+sample_data_1d <- sample_data1_b %>%
+  mutate(quintile =
+           fct_recode(v190,
+                      "Quintile 1 (poorest)" = "poorest",
+                      "Quintile 2" = "poorer",
+                      "Quintile 3" = "middle",
+                      "Quintile 4" = "richer",
+                      "Quintile 5 (richest)" = "richest")
+  )
+
+count(sample_data_1d, quintile)
+```
+
+```
+## # A tibble: 5 × 2
+##   quintile                 n
+##   <fct>                <int>
+## 1 Quintile 3             491
+## 2 Quintile 2             508
+## 3 Quintile 1 (poorest)   747
+## 4 Quintile 4             476
+## 5 Quintile 5 (richest)   455
+```
+
 
 
 ``` r
-plot(pressure)
+## Mother's education (variable v149)
+count(sample_data_1d, v149)
 ```
 
-{{< /panel >}}
-{{< /panelset  >}}
+```
+## # A tibble: 6 × 2
+##   v149                     n
+##   <chr>                <int>
+## 1 complete primary       469
+## 2 complete secondary     805
+## 3 higher                 493
+## 4 incomplete primary     216
+## 5 incomplete secondary   647
+## 6 no education            47
+```
 
-## I'm half machine. I'm a monster.
+``` r
+sample_data_1e <- sample_data_1d %>%
+  mutate(educatt =
+           fct_recode(v149,
+                      "No or primary education" = "no education",
+                      "No or primary education" = "incomplete primary",
+                      "No or primary education" = "complete primary",
+                      "Secondary or higher education" = "incomplete secondary",
+                      "Secondary or higher education" = "complete secondary",
+                      "Secondary or higher education" = "higher")
+  )
 
-It's a hug, Michael. I'm hugging you. I'm half machine. I'm a monster. There's only one man I've ever called a coward, and that's Brian Doyle Murray. No, what I'm calling you is a television actor. Bad news. Andy Griffith turned us down. He didn't like his trailer.
+count(sample_data_1e, educatt)
+```
 
-No, I did not kill Kitty. However, I am going to oblige and answer the nice officer's questions because I am an honest man with no secrets to hide. Guy's a pro. Really? __Did nothing cancel?__ *Get me a vodka rocks.* And a piece of toast.
+```
+## # A tibble: 2 × 2
+##   educatt                           n
+##   <fct>                         <int>
+## 1 No or primary education         732
+## 2 Secondary or higher education  1945
+```
 
-## No… but I'd like to be asked!
 
-Oh, you're gonna be in a coma, all right. Steve Holt! I hear the jury's still out on science. No, I did not kill Kitty. However, I am going to oblige and answer the nice officer's questions because I am an honest man with no secrets to hide.
 
-1. Really? Did nothing cancel?
-2. That's what it said on 'Ask Jeeves.'
-3. Get me a vodka rocks. And a piece of toast.
+``` r
+## Place of residence (variable v025)
+sample_data_1f <- sample_data_1e %>%
+  mutate(urban =
+           fct_recode(v025,
+                      "Urban" = "urban",
+                      "Rural" = "rural")
+  )
 
-### That's what it said on 'Ask Jeeves.'
+count(sample_data_1f, urban)
+```
 
-Did you enjoy your meal, Mom? You drank it fast enough. What's Spanish for "I know you speak English?" Bad news. Andy Griffith turned us down. He didn't like his trailer. Really? Did nothing cancel? I care deeply for nature.
+```
+## # A tibble: 2 × 2
+##   urban     n
+##   <fct> <int>
+## 1 Rural  1353
+## 2 Urban  1324
+```
 
-* Michael!
-* No! I was ashamed to be SEEN with you. I like being with you.
-* We just call it a sausage.
 
-Well, what do you expect, mother? It's called 'taking advantage.' It's what gets you ahead in life. Now, when you do this without getting punched in the chest, you'll have more fun. No, I did not kill Kitty. However, I am going to oblige and answer the nice officer's questions because I am an honest man with no secrets to hide.
 
-I'm half machine. I'm a monster. It's a hug, Michael. I'm hugging you. Guy's a pro. First place chick is hot, but has an attitude, doesn't date magicians. He'll want to use your yacht, and I don't want this thing smelling like fish.
+``` r
+## Finalizing data object preparation by selecting specified variables
+sample_data_2 <- sample_data_1f %>%
+  select(psu,
+         weight,
+         strata,
+         sba,
+         mage,
+         quintile,
+         educatt,
+         urban)
+```
 
-He'll want to use your yacht, and I don't want this thing smelling like fish. Now, when you do this without getting punched in the chest, you'll have more fun. We just call it a sausage. Guy's a pro. Bad news. Andy Griffith turned us down. He didn't like his trailer.
 
-There's only one man I've ever called a coward, and that's Brian Doyle Murray. No, what I'm calling you is a television actor. It's called 'taking advantage.' It's what gets you ahead in life. We just call it a sausage.
 
-Michael! First place chick is hot, but has an attitude, doesn't date magicians. I've opened a door here that I regret. Guy's a pro.
+``` r
+view(sample_data_2)
+```
 
-Army had half a day. Michael! Now, when you do this without getting punched in the chest, you'll have more fun. Well, what do you expect, mother? Now, when you do this without getting punched in the chest, you'll have more fun.
 
-But I bought a yearbook ad from you, doesn't that mean anything anymore? Oh, you're gonna be in a coma, all right. It's a hug, Michael. I'm hugging you. I've opened a door here that I regret.
 
-There's only one man I've ever called a coward, and that's Brian Doyle Murray. No, what I'm calling you is a television actor. That's why you always leave a note! He'll want to use your yacht, and I don't want this thing smelling like fish.
 
-I've opened a door here that I regret. Now, when you do this without getting punched in the chest, you'll have more fun. I care deeply for nature. It's called 'taking advantage.' It's what gets you ahead in life.
 
-It's a hug, Michael. I'm hugging you. No… but I'd like to be asked! What's Spanish for "I know you speak English?" It's called 'taking advantage.' It's what gets you ahead in life. It's a hug, Michael. I'm hugging you.
-
-I don't understand the question, and I won't respond to it. Really? Did nothing cancel? Did you enjoy your meal, Mom? You drank it fast enough. Bad news. Andy Griffith turned us down. He didn't like his trailer.
 
 
