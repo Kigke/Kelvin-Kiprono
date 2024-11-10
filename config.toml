@@ -1,4 +1,4 @@
-baseURL = "https://kiprono-kelvin.netlify.app//"
+baseURL = "https://kipronokelvin.netlify.app//"
 theme = "hugo-apero"
 languageCode = "en"
 title = "Personal website of Kelvin Kiprono"
@@ -30,10 +30,10 @@ enableEmoji = true
 [params]
   orgName = "RStudio"
   orgLocal = "Anywhere"
-  description = "A modern, beautiful, and easily configurable blog theme for Hugo."
+  description = "Blog and portfolio of projects by Kelvin Kiprono,Statistician and data analyst."
   favicon = "/img/img/Data.jpeg"
   logo = "/img/Data.jpeg"
-  mainSections = ["blog", "project", "talk"]
+  mainSections = ["blog", "project", "about"]
   navallcaps = true
   # show/hide social icons in site header & footer
   # configure social icons and links below in [[params.social]]
@@ -48,25 +48,25 @@ enableEmoji = true
   # use a built-in color theme
   # one of: forest / grayscale / peach / plum /
   #         poppy / sky / violet / water 
-  theme = "violet"
+  theme = ""
   
   # or, leave theme empty & make your own palette
   # see docs at https://hugo-apero.netlify.app/blog/color-themes/
   # the custom scss file must be in the assets/ folder
   # add the filename name here, without extension
   # to use hex colors instead of named tachyons colors, include "hex" in filename
-  custom_theme = "" 
+  custom_theme = "purple-hex-theme" 
   
   # use an embedded font-family
   # serif options: Fraunces / EB Garamond / Bitter
   # sans-serif options: Commissioner / Alegreya Sans / Metropolis
   # if you import your own fonts, name them here too
   customtextFontFamily = "Commissioner"
-  customheadingFontFamily = "Fraunces"
+  customheadingFontFamily = "E.B. Garamond"
   # alternatively, leave empty and select basic font options: sans-serif or serif
   # for more http://tachyons.io/docs/typography/font-family/
   textFontFamily = "sans-serif"
-  headingFontFamily = "sans-serif"
+  headingFontFamily = "serif"
   
   # Social icons may appear on homepage and in site header or footer
   # Configure show/hide above - add as many as you like below
@@ -94,9 +94,9 @@ enableEmoji = true
       icon_pack = "fab"
       url       = "https://www.linkedin.com/in/kelvin-kiprono/"
   [[params.social]]
-      icon      = "rss" # icon name without the 'fa-'
+      icon      = "envelope" # icon name without the 'fa-'
       icon_pack = "fas"
-      url       = "/blog/index.xml"
+      url       = "/contact"
 
 [taxonomies]
   category = "categories"
@@ -106,19 +106,19 @@ enableEmoji = true
 [menu]
   [[menu.header]]
     name = "About"
-    title = "About Blogophonic"
+    title = "Kelvin Kiprono: About me"
     url = "/about/"
-    weight = 1
+    weight = 8
   [[menu.header]]
     name = "Blog R"
-    title = "Blog"
+    title = "Kelvin Kiprono: Blog"
     url = "/blog/"
     weight = 2
   [[menu.header]]
     name = "Projects"
-    title = "Project Portfolio"
+    title = "Kelvin Kiprono: R projects"
     url = "/project/"
-    weight = 3
+    weight = 9
     
   # Configure footer  
   [[menu.footer]]
@@ -128,9 +128,14 @@ enableEmoji = true
     weight = 1
   [[menu.footer]]
     name = "Contact"
-    title = "Contact form"
+    title = "Kelvin Kiprono: Contact"
     url = "/contact/"
     weight = 2
+  [[menu.footer]]
+    name = "About"
+    title = "Kelvin Kiprono: About me"
+    url = "/about/"
+    weight = 1
 
 # see https://gohugo.io/about/hugo-and-gdpr/    
 [privacy]
