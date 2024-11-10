@@ -37,8 +37,7 @@ cascade:
     text_contents_label: "On this page" 
   tags:
   - hugo-site
-  categories:
-  - Theme Features
+  categories:Data analysis using R
   - R
 ---
 
