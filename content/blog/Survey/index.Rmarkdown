@@ -8,13 +8,38 @@ draft: false
 # layout options: single, single-sidebar
 layout: single
 categories:
-- evergreen
+- R Data Analysis
 ---
 
 ```{r}
-library(palmerpenguins)
+library(readxl)
+sample_data1 <- read_excel("C:/Users/hp/Downloads/sample_data_1_1_.xlsx")
+
+
+```
+```{r}
+library(survey)
+library(tidyverse)
+```
+
+
+```{r}
 library(dplyr)
-palmerpenguins::penguins
+glimpse(sample_data1)
+```
+```{r}
+str(sample_data1)
+```
+```{r}
+summary(sample_data1)
+```
+
+
+```{r}
+sample_data1 %>% 
+  group_by(v149) %>% 
+  summarise(n=n()) %>% 
+  mutate(p=n/sum(n()))
 ```
 
 

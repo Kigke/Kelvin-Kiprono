@@ -13,47 +13,190 @@ categories:
 
 
 ``` r
-library(palmerpenguins)
-library(dplyr)
-```
-
-```
-## 
-## Attaching package: 'dplyr'
-```
-
-```
-## The following objects are masked from 'package:stats':
-## 
-##     filter, lag
-```
-
-```
-## The following objects are masked from 'package:base':
-## 
-##     intersect, setdiff, setequal, union
+library(readxl)
+sample_data1 <- read_excel("C:/Users/hp/Downloads/sample_data_1_1_.xlsx")
 ```
 
 ``` r
-palmerpenguins::penguins
+library(survey)
 ```
 
 ```
-## # A tibble: 344 × 8
-##    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-##    <fct>   <fct>              <dbl>         <dbl>             <int>       <int>
-##  1 Adelie  Torgersen           39.1          18.7               181        3750
-##  2 Adelie  Torgersen           39.5          17.4               186        3800
-##  3 Adelie  Torgersen           40.3          18                 195        3250
-##  4 Adelie  Torgersen           NA            NA                  NA          NA
-##  5 Adelie  Torgersen           36.7          19.3               193        3450
-##  6 Adelie  Torgersen           39.3          20.6               190        3650
-##  7 Adelie  Torgersen           38.9          17.8               181        3625
-##  8 Adelie  Torgersen           39.2          19.6               195        4675
-##  9 Adelie  Torgersen           34.1          18.1               193        3475
-## 10 Adelie  Torgersen           42            20.2               190        4250
-## # ℹ 334 more rows
-## # ℹ 2 more variables: sex <fct>, year <int>
+## Loading required package: grid
+```
+
+```
+## Loading required package: Matrix
+```
+
+```
+## Loading required package: survival
+```
+
+```
+## 
+## Attaching package: 'survey'
+```
+
+```
+## The following object is masked from 'package:graphics':
+## 
+##     dotchart
+```
+
+``` r
+library(tidyverse)
+```
+
+```
+## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+## ✔ dplyr     1.1.4     ✔ readr     2.1.5
+## ✔ forcats   1.0.0     ✔ stringr   1.5.1
+## ✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+## ✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+## ✔ purrr     1.0.2
+```
+
+```
+## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ tidyr::expand() masks Matrix::expand()
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()
+## ✖ tidyr::pack()   masks Matrix::pack()
+## ✖ tidyr::unpack() masks Matrix::unpack()
+## ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+```
+
+
+
+``` r
+library(dplyr)
+glimpse(sample_data1)
+```
+
+```
+## Rows: 2,677
+## Columns: 21
+## $ id     <dbl> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, …
+## $ psu    <dbl> 1427, 1859, 891, 1652, 20, 1962, 1618, 1063, 1567, 536, 1454, 1…
+## $ weight <dbl> 1.253567, 0.187608, 1.889372, 0.788736, 0.358671, 1.354536, 0.7…
+## $ strata <chr> "south kalimantan rural", "maluku rural", "central java urban",…
+## $ v012   <dbl> 31, 24, 37, 26, 37, 34, 32, 35, 24, 31, 42, 36, 34, 39, 30, 28,…
+## $ v025   <chr> "rural", "rural", "urban", "rural", "rural", "rural", "urban", …
+## $ v149   <chr> "incomplete primary", "incomplete secondary", "incomplete secon…
+## $ v190   <chr> "poorest", "poorest", "middle", "poorest", "poorer", "poorest",…
+## $ b4     <chr> "female", "female", "female", "male", "male", "male", "female",…
+## $ b5     <chr> "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", …
+## $ b19    <dbl> 28, 27, 26, 50, 29, 19, 59, 1, 4, 6, 49, 48, 28, 40, 31, 33, 15…
+## $ m3a    <chr> "no", "no", "no", "no", "no", "no", "no", "no", "no", "no", "no…
+## $ m3b    <chr> "no", "no", "no", "no", "yes", "no", "no", "no", "no", "yes", "…
+## $ m3c    <chr> "no", "no", "no", "no", "no", "no", "yes", "no", "no", "yes", "…
+## $ m3d    <chr> "no", "no", "no", "yes", "no", "no", "yes", "no", "no", "no", "…
+## $ m3e    <chr> "no", "no", "no", "no", "no", "yes", "no", "yes", "yes", "no", …
+## $ m3g    <chr> "yes", "yes", "yes", "no", "no", "no", "no", "yes", "no", "no",…
+## $ m3h    <chr> "no", "no", "yes", "yes", "no", "yes", "no", "no", "no", "no", …
+## $ m3k    <chr> "no", "no", "no", "no", "no", "no", "no", "no", "no", "no", "no…
+## $ m3n    <chr> "no: some assistance", "no: some assistance", "no: some assista…
+## $ h7     <chr> "vaccination date on card", "reported by mother", "no", NA, "re…
+```
+
+``` r
+str(sample_data1)
+```
+
+```
+## tibble [2,677 × 21] (S3: tbl_df/tbl/data.frame)
+##  $ id    : num [1:2677] 1 2 3 4 5 6 7 8 9 10 ...
+##  $ psu   : num [1:2677] 1427 1859 891 1652 20 ...
+##  $ weight: num [1:2677] 1.254 0.188 1.889 0.789 0.359 ...
+##  $ strata: chr [1:2677] "south kalimantan rural" "maluku rural" "central java urban" "south sulawesi rural" ...
+##  $ v012  : num [1:2677] 31 24 37 26 37 34 32 35 24 31 ...
+##  $ v025  : chr [1:2677] "rural" "rural" "urban" "rural" ...
+##  $ v149  : chr [1:2677] "incomplete primary" "incomplete secondary" "incomplete secondary" "incomplete secondary" ...
+##  $ v190  : chr [1:2677] "poorest" "poorest" "middle" "poorest" ...
+##  $ b4    : chr [1:2677] "female" "female" "female" "male" ...
+##  $ b5    : chr [1:2677] "yes" "yes" "yes" "yes" ...
+##  $ b19   : num [1:2677] 28 27 26 50 29 19 59 1 4 6 ...
+##  $ m3a   : chr [1:2677] "no" "no" "no" "no" ...
+##  $ m3b   : chr [1:2677] "no" "no" "no" "no" ...
+##  $ m3c   : chr [1:2677] "no" "no" "no" "no" ...
+##  $ m3d   : chr [1:2677] "no" "no" "no" "yes" ...
+##  $ m3e   : chr [1:2677] "no" "no" "no" "no" ...
+##  $ m3g   : chr [1:2677] "yes" "yes" "yes" "no" ...
+##  $ m3h   : chr [1:2677] "no" "no" "yes" "yes" ...
+##  $ m3k   : chr [1:2677] "no" "no" "no" "no" ...
+##  $ m3n   : chr [1:2677] "no: some assistance" "no: some assistance" "no: some assistance" "no: some assistance" ...
+##  $ h7    : chr [1:2677] "vaccination date on card" "reported by mother" "no" NA ...
+```
+
+``` r
+summary(sample_data1)
+```
+
+```
+##        id            psu             weight           strata         
+##  Min.   :   1   Min.   :   1.0   Min.   :0.06359   Length:2677       
+##  1st Qu.: 670   1st Qu.: 451.0   1st Qu.:0.35909   Class :character  
+##  Median :1339   Median :1022.0   Median :0.84843   Mode  :character  
+##  Mean   :1339   Mean   : 993.2   Mean   :0.94872                     
+##  3rd Qu.:2008   3rd Qu.:1522.0   3rd Qu.:1.41101                     
+##  Max.   :2677   Max.   :1970.0   Max.   :5.40138                     
+##       v012           v025               v149               v190          
+##  Min.   :15.00   Length:2677        Length:2677        Length:2677       
+##  1st Qu.:26.00   Class :character   Class :character   Class :character  
+##  Median :31.00   Mode  :character   Mode  :character   Mode  :character  
+##  Mean   :30.91                                                           
+##  3rd Qu.:36.00                                                           
+##  Max.   :49.00                                                           
+##       b4                 b5                 b19            m3a           
+##  Length:2677        Length:2677        Min.   : 0.00   Length:2677       
+##  Class :character   Class :character   1st Qu.:15.00   Class :character  
+##  Mode  :character   Mode  :character   Median :30.00   Mode  :character  
+##                                        Mean   :29.97                     
+##                                        3rd Qu.:45.00                     
+##                                        Max.   :59.00                     
+##      m3b                m3c                m3d                m3e           
+##  Length:2677        Length:2677        Length:2677        Length:2677       
+##  Class :character   Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+##                                                                             
+##                                                                             
+##                                                                             
+##      m3g                m3h                m3k                m3n           
+##  Length:2677        Length:2677        Length:2677        Length:2677       
+##  Class :character   Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+##                                                                             
+##                                                                             
+##                                                                             
+##       h7           
+##  Length:2677       
+##  Class :character  
+##  Mode  :character  
+##                    
+##                    
+## 
+```
+
+
+
+``` r
+sample_data1 %>% 
+  group_by(v149) %>% 
+  summarise(n=n()) %>% 
+  mutate(p=n/sum(n()))
+```
+
+```
+## # A tibble: 6 × 3
+##   v149                     n      p
+##   <chr>                <int>  <dbl>
+## 1 complete primary       469  78.2 
+## 2 complete secondary     805 134.  
+## 3 higher                 493  82.2 
+## 4 incomplete primary     216  36   
+## 5 incomplete secondary   647 108.  
+## 6 no education            47   7.83
 ```
 
 
