@@ -1,13 +1,13 @@
 ---
-title: "A first post"
+title: "Inequality analysis using R"
 weight: 1
 subtitle: ""
-excerpt: "Grid is the very first CSS module created specifically to solve the layout problems we’ve all been hacking our way around for as long as we’ve been making websites."
-date: 2021-01-01
+excerpt: "Inequality analysis in R refers to the exploration and analysis of data to study inequalities or disparities within the data set. This could include examining socio-economic inequalities, health disparities, income inequality, or other aspects in different contexts, like surveys or census data."
+date: 2024-09-01
 draft: false
 ---
 
-{{< here >}}
+
 
 
 ## does this work?
