@@ -1,7 +1,16 @@
 ---
 title: "ggplot2"
-subtitle: ""
-excerpt: ""
+subtitle: "Introduction"
+excerpt: "ggplot2 is an R package widely used for data visualization. Created by Hadley Wickham, it implements the Grammar of Graphics, which allows users to create complex multi-layered graphics by building them step-by-step. With ggplot2, you can create a wide range of visualizations, from simple scatter plots and bar charts to complex faceted plots.
+
+Key Concepts:
+  
+Aesthetic Mappings (aes): Links data columns to visual properties (e.g., x-axis, y-axis, color, size).
+Geoms (Geometric Objects): Specify the type of plot (e.g., geom_point() for scatter plots, geom_line() for line plots, geom_bar() for bar charts).
+Layers: Plots are created by adding layers (e.g., points, lines, text) using the + operator.
+Scales: Customize axes and legends (e.g., scale_x_continuous(), scale_color_manual()).
+Faceting: Create multi-panel plots using facet_wrap() or facet_grid() to show subsets of data.
+Themes: Modify the non-data elements like background, grid lines, and text with theme() and pre-defined themes such as theme_minimal() or theme_classic()."
 date: 2024-05-26
 author: "Kelvin Kiprono"
 draft: false
