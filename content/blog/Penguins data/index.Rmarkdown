@@ -27,6 +27,20 @@ ggplot(data = penguins, aes(x = flipper_length_mm)) +
   scale_fill_manual(values = c("darkorange","darkorchid","cyan4"))
 ```
 
+Plotly is an interactive graphing library for R that makes it easy to create interactive, web-ready visualizations. It is particularly useful for exploring data, sharing findings, and building dashboards with enhanced user experiences.
+
+```{r}
+library(plotly)
+```
+```{r}
+Flipper <- ggplot(data = penguins, aes(x = flipper_length_mm)) +
+  geom_histogram(aes(fill = species), alpha = 0.5, position = "identity") +
+  scale_fill_manual(values = c("darkorange","darkorchid","cyan4"))
+```
+```{r}
+ggplotly(Flipper)
+```
+
 
 
 
