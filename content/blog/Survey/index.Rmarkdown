@@ -10,7 +10,7 @@ layout: single
 categories:
 - R Data Analysis
 ---
-
+We are going to
 ```{r}
 library(readxl)
 sample_data1 <- read_excel("C:/Users/hp/Downloads/sample_data_1_1_.xlsx")
