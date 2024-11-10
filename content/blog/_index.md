@@ -1,10 +1,9 @@
 ---
-title: A Blog That Works
+title: Kelvin Kiprono : Blog
 description: |
-  This is a fully featured blog that supports categories, 
-  tags, series, and pagination.
+  The greatest value of a picture is when it forces us to notice what we never expected to see.
 author: "Kelvin Kiprono"
-show_post_thumbnail: true
+show_post_thumbnail: false
 show_author_byline: true
 show_post_date: true
 # for listing page layout
