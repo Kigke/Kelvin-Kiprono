@@ -11,11 +11,9 @@ layout: list-sidebar # list, list-sidebar, list-grid
 
 # for list-sidebar layout
 sidebar: 
-  title: A Sidebar for Your Thoughts
+  title: Data visualization concept
   description: |
-    This is a fully featured blog that supports categories,
-    tags, series, and pagination. Even this sidebar offers 
-    a ton of customizations.
+    The greatest value of a picture is when it forces us to notice what we never expected to see.
     
     Check out the _index.md file in the /blog folder 
     to edit this content. 
