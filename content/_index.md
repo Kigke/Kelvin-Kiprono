@@ -1,7 +1,7 @@
 ---
 title: "Kelvin Kiprono"
 subtitle: "STATISTICIAN AND DATA ANALYST"
-description: "R programming."
+description: ""
 date: 2019-02-18T12:27:33-06:00
 images:
   - Data2.jpeg
