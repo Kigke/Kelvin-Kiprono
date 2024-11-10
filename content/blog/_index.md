@@ -3,7 +3,7 @@ title: Kelvin Kiprono Blog
 description: |
   The greatest value of a picture is when it forces us to notice what we never expected to see.
 author: "Kelvin Kiprono"
-show_post_thumbnail: false
+show_post_thumbnail: true
 show_author_byline: true
 show_post_date: true
 # for listing page layout
