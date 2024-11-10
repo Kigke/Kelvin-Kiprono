@@ -1,9 +1,9 @@
 ---
-title: "Lorem Simpson"
-subtitle: ""
-excerpt: "An .Rmarkdown post"
-date: 2021-05-26
-author: "Alison Hill"
+title: "Palmer Penguins dataset"
+subtitle: "Plotting variables using ggplot2"
+excerpt: ""
+date: 2024-05-26
+author: "Kelvin Kiprono"
 draft: false
 images:
 series:
@@ -12,9 +12,8 @@ categories:
 layout: single
 ---
 
-{{< here >}}
 
-## Some penguins to start
+## Loading the data
 
 
 ```r
