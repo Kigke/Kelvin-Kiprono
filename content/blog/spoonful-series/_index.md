@@ -1,8 +1,8 @@
 ---
-title: A Spoonful of Hugo
+title: Statistical Data Analysis using R
 description: |
-  A forking fun new feature for series.
-author: Alison Hill
+  R is a powerful statistical programming language used for data analysis, visualization, and modeling. Its flexibility and rich package ecosystem make it ideal for everything from basic summaries to complex analytics. In this blog, I'll explore practical ways to use R for insightful data analysis and data-driven decisions..
+author: Kelvin Kiprono
 show_post_thumbnail: false
 show_author_byline: true
 show_post_date: true
@@ -11,14 +11,13 @@ layout: list-sidebar # list, list-sidebar, list-grid
 
 # for list-sidebar layout
 sidebar: 
-  title: A Spoonful of Hugo
-  author: Alison Hill
+  title: Statistical Data Analysis using R
+  author: Kelvin Kiprono
   description: |
-    A forking fun new feature for series.
+   R is a powerful statistical programming language used for data analysis, visualization, and modeling. Its flexibility and rich package ecosystem make it ideal for everything from basic summaries to complex analytics. In this blog, I'll explore practical ways to use R for insightful data analysis and data-driven decisions.
     Even this sidebar offers a ton of customizations!
     
-    Check out the _index.md file in the /blog/spoonful-series
-    folder to edit this content.
+    
   text_link_label: ""
   text_link_url: ""
   show_sidebar_adunit: false # show ad container
@@ -26,8 +25,8 @@ sidebar:
 # set up common front matter for all individual pages in series
 cascade:
   layout: single-series       # for a series, do not change
-  series: A Spoonful of Hugo  # name your series
-  author: Alison Hill
+  series: Statistical Data Analysis using R  # name your series
+  author: Kelvin Kiprono
   show_author_byline: true
   show_post_date: true
   sidebar:
