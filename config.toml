@@ -110,7 +110,7 @@ enableEmoji = true
     url = "/about/"
     weight = 8
   [[menu.header]]
-    name = "Projects & Blog R"
+    name = "Blog R"
     title = "Kelvin Kiprono: Blog"
     url = "/blog/"
     weight = 2
