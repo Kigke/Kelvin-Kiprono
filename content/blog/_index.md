@@ -3,8 +3,8 @@ title: A Blog That Works
 description: |
   This is a fully featured blog that supports categories, 
   tags, series, and pagination.
-author: "The R Markdown Team @RStudio"
-show_post_thumbnail: true
+author: "Kelvin Kiprono"
+show_post_thumbnail: false
 show_author_byline: true
 show_post_date: true
 # for listing page layout
