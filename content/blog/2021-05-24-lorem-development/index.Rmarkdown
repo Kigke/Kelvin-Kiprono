@@ -12,7 +12,7 @@ categories:
 ---
 
 ```{r}
-library(palmerpenguins)
+library(survey)
 library(dplyr)
 palmerpenguins::penguins
 ```
