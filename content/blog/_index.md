@@ -20,14 +20,14 @@ sidebar:
     
     Check out the _index.md file in the /blog folder 
     to edit this content. 
-  author: "The R Markdown Team @RStudio"
+  author: "Kelvin Kiprono"
   text_link_label: Subscribe via RSS
   text_link_url: /index.xml
   show_sidebar_adunit: false # show ad container
 
 # set up common front matter for all pages inside blog/
 cascade:
-  author: "The R Markdown Team @RStudio"
+  author: "Kelvin Kiprono"
   show_author_byline: true
   show_post_date: true
   show_disqus_comments: false # see disqusShortname in site config
