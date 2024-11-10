@@ -4,7 +4,7 @@ subtitle: "STATISTICIAN AND DATA ANALYST"
 description: ""
 date: 2024-02-18T12:27:33-06:00
 images:
-  - img/Data2.jpeg
+  - img/analysis.jpeg
 image_left: true
 text_align_left: false
 show_social_links: true # specify social accounts in site config
