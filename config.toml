@@ -135,7 +135,7 @@ enableEmoji = true
     name = "About"
     title = "Kelvin Kiprono: About me"
     url = "/about/"
-    weight = 1
+    weight = 2
 
 # see https://gohugo.io/about/hugo-and-gdpr/    
 [privacy]
