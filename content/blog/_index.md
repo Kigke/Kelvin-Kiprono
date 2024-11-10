@@ -1,5 +1,5 @@
 ---
-title: Kelvin Kiprono : Blog
+title: Kelvin Kiprono Blog
 description: |
   The greatest value of a picture is when it forces us to notice what we never expected to see.
 author: "Kelvin Kiprono"
