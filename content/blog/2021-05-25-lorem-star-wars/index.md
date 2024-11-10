@@ -8,10 +8,10 @@ draft: false
 # layout options: single, single-sidebar
 layout: single
 categories:
-- Theme features
+- R Data Analysis
 ---
 
-{{< here >}}
+
 
 ## But first, a shortcode trick
 
