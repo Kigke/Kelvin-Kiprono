@@ -110,15 +110,11 @@ enableEmoji = true
     url = "/about/"
     weight = 8
   [[menu.header]]
-    name = "Blog R"
+    name = "Projects & Blog R"
     title = "Kelvin Kiprono: Blog"
     url = "/blog/"
     weight = 2
-  [[menu.header]]
-    name = "Projects"
-    title = "Kelvin Kiprono: R projects"
-    url = "/project/"
-    weight = 9
+ 
     
   # Configure footer  
   [[menu.footer]]
