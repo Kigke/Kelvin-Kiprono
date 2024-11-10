@@ -15,8 +15,7 @@ sidebar:
   description: |
     The greatest value of a picture is when it forces us to notice what we never expected to see.
     
-    Check out the _index.md file in the /blog folder 
-    to edit this content. 
+   
   author: "Kelvin Kiprono"
  
   show_sidebar_adunit: false # show ad container
