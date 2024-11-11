@@ -57,6 +57,8 @@ relationship <- ggplot(penguins,aes(flipper_length_mm,body_mass_g,colour = sex))
   ggthemes::theme_tufte() +
   ggtitle("Relationship between flipper_length and body mass based on sex")
 ```
+
+
 ```{r}
 ggplotly(relationship)
 ```
@@ -76,6 +78,8 @@ Flipper <- ggplot(data = penguins, aes(x = flipper_length_mm)) +
   geom_histogram(aes(fill = species), alpha = 0.5, position = "identity") +
   scale_fill_manual(values = c("darkorange","darkorchid","cyan4"))
 ```
+
+
 ```{r}
 ggplotly(Flipper)
 ```
