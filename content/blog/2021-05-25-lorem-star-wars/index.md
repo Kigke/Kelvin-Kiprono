@@ -1,9 +1,9 @@
 ---
-title: "Lorem Star Wars"
-subtitle: "How to add panelsets in plain markdown posts."
-excerpt: "Add tabbed sections to your posts."
-date: 2021-05-25
-author: "Alison Hill"
+title: "Understanding Standard Error and Confidence Intervals"
+subtitle: ""
+excerpt: "In statistics, standard error and confidence intervals are fundamental concepts that help us draw conclusions about population parameters based on sample data. These tools are essential for estimating population means, proportions, and other characteristics in a way that reflects the uncertainty inherent in working with samples. Let’s dive into what these concepts mean and how they are used."
+date: 2024-05-25
+author: "Kelvin Kiprono"
 draft: false
 # layout options: single, single-sidebar
 layout: single
@@ -13,74 +13,39 @@ categories:
 
 
 
-## But first, a shortcode trick
+## What is Standard Error?
 
-Courtesy of panelset.js by Garrick Aden-Buie, from his xaringanExtra package: https://pkg.garrickadenbuie.com/xaringanExtra/#/panelset
+The standard error (SE) measures the variability or precision of a sample statistic, such as the mean, in estimating a population parameter. Unlike standard deviation, which measures variability within a dataset, the standard error focuses on the variability in the sampling distribution of a statistic.
 
-For example, this panelset:
+For example, if we repeatedly draw samples from a population and calculate each sample's mean, the standard deviation of these sample means is the standard error of the mean. The SE is particularly useful because it gives us insight into how much our sample mean might vary from the true population mean.
 
-{{< panelset class="greetings" >}}
-{{< panel name="Hello! :wave:" >}}
-  hello
-{{< /panel >}}
-{{< panel name="Goodbye :dash:" >}}
-  goodbye
-{{< /panel >}}
-{{< /panelset  >}}
+The larger the sample size, the smaller the standard error, indicating that larger samples provide more reliable estimates of the population mean.
 
-Was created by combining this theme's `panelset` and `panel` shortcodes:
+## Why is Standard Error Important?
 
-```go
-{{</* panelset class="greetings" */>}}
-{{</* panel name="Hello! :wave:" */>}}
-  hello
-{{</* /panel */>}}
-{{</* panel name="Goodbye :dash:" */>}}
-  goodbye
-{{</* /panel */>}}
-{{</* /panelset */>}}
-```
+Standard error is crucial for inferential statistics because it enables us to estimate how much our sample statistic is likely to differ from the population parameter. Smaller SE values indicate that the sample mean is a more accurate reflection of the population mean, while larger SE values suggest more variability and less certainty about our estimate.
 
-## Escape is not his plan. I must face him, alone.
+## What are Confidence Intervals?
+A confidence interval (CI) provides a range of values within which we expect the true population parameter to lie, based on our sample data. It’s a way of expressing the uncertainty around an estimate, helping us gauge how close we might be to the actual value in the population.
 
-I'm surprised you had the courage to take the responsibility yourself. I don't know what you're talking about. I am a member of the Imperial Senate on a diplomatic mission to Alderaan-- Kid, I've flown from one side of this galaxy to the other. I've seen a lot of strange stuff, but I've never seen anything to make me believe there's one all-powerful Force controlling everything. There's no mystical energy field that controls my destiny. It's all a lot of simple tricks and nonsense.
+A confidence interval has two main parts:
 
-What good is a reward if you ain't around to use it? Besides, attacking that battle station ain't my idea of courage. __It's more like…suicide.__ *I have traced the Rebel spies to her.* Now she is my only link to finding their secret base.
+Point Estimate: The sample statistic we are using to estimate the population parameter (e.g., the sample mean).
+Margin of Error: The range that accounts for variability due to sampling error, often calculated as a multiple of the standard error.
 
-## Still, she's got a lot of spirit. I don't know, what do you think?
+A 95% confidence interval means that if we were to draw 100 different samples and calculate the confidence interval for each, we would expect the true population mean to lie within these intervals in 95 of those samples. In other words, we can be 95% confident that our interval contains the true population parameter.
 
-Still, she's got a lot of spirit. I don't know, what do you think? Dantooine. They're on Dantooine. I'm trying not to, kid. You are a part of the Rebel Alliance and a traitor! Take her away! A tremor in the Force. The last time I felt it was in the presence of my old master.
+## Interpreting Confidence Intervals and Standard Error
 
-1. You don't believe in the Force, do you?
-2. Don't be too proud of this technological terror you've constructed. The ability to destroy a planet is insignificant next to the power of the Force.
-3. Don't act so surprised, Your Highness. You weren't on any mercy mission this time. Several transmissions were beamed to this ship by Rebel spies. I want to know what happened to the plans they sent you.
+- A smaller standard error leads to a narrower confidence interval, indicating a more precise estimate.
+- Increasing the confidence level (e.g., from 95% to 99%) widens the interval, reflecting a higher certainty that the interval contains the population parameter.
+- Larger sample sizes reduce the standard error, improving the accuracy of the interval.
 
-### You don't believe in the Force, do you?
+## Limitations and Misinterpretations
 
-I need your help, Luke. She needs your help. I'm getting too old for this sort of thing. In my experience, there is no such thing as luck. What!? I suggest you try it again, Luke. This time, let go your conscious self and act on instinct.
+- Confidence levels don’t imply probability: Saying "95% confidence" doesn’t mean there's a 95% chance the interval contains the true mean for any one study—rather, it means that over many samples, 95% of the intervals should contain the mean.
+- Over-reliance on small sample sizes can lead to inaccurate intervals, as small samples have high standard errors.
 
-* Hey, Luke! May the Force be with you.
-* I care. So, what do you think of her, Han?
-* She must have hidden the plans in the escape pod. Send a detachment down to retrieve them, and see to it personally, Commander. There'll be no one to stop us this time!
+## Conclusion
 
-The more you tighten your grip, Tarkin, the more star systems will slip through your fingers. Obi-Wan is here. The Force is with him. Remember, a Jedi can feel the Force flowing through him. What!?
-
-But with the blast shield down, I can't even see! How am I supposed to fight? Don't be too proud of this technological terror you've constructed. The ability to destroy a planet is insignificant next to the power of the Force.
-
-Hokey religions and ancient weapons are no match for a good blaster at your side, kid. I have traced the Rebel spies to her. Now she is my only link to finding their secret base. The plans you refer to will soon be back in our hands.
-
-Hokey religions and ancient weapons are no match for a good blaster at your side, kid. Leave that to me. Send a distress signal, and inform the Senate that all on board were killed. Look, I can take you as far as Anchorhead. You can get a transport there to Mos Eisley or wherever you're going.
-
-Obi-Wan is here. The Force is with him. Oh God, my uncle. How am I ever gonna explain this? Partially, but it also obeys your commands. Kid, I've flown from one side of this galaxy to the other. I've seen a lot of strange stuff, but I've never seen anything to make me believe there's one all-powerful Force controlling everything. There's no mystical energy field that controls my destiny. It's all a lot of simple tricks and nonsense.
-
-I call it luck. I need your help, Luke. She needs your help. I'm getting too old for this sort of thing. Ye-ha! You're all clear, kid. Let's blow this thing and go home! In my experience, there is no such thing as luck.
-
-The Force is strong with this one. I have you now. What?! But with the blast shield down, I can't even see! How am I supposed to fight? You don't believe in the Force, do you? Ye-ha!
-
-The Force is strong with this one. I have you now. He is here. A tremor in the Force. The last time I felt it was in the presence of my old master. I'm surprised you had the courage to take the responsibility yourself.
-
-I have traced the Rebel spies to her. Now she is my only link to finding their secret base. Oh God, my uncle. How am I ever gonna explain this? What?! A tremor in the Force. The last time I felt it was in the presence of my old master.
-
-Kid, I've flown from one side of this galaxy to the other. I've seen a lot of strange stuff, but I've never seen anything to make me believe there's one all-powerful Force controlling everything. There's no mystical energy field that controls my destiny. It's all a lot of simple tricks and nonsense. Don't underestimate the Force.
-
-I don't know what you're talking about. I am a member of the Imperial Senate on a diplomatic mission to Alderaan-- The more you tighten your grip, Tarkin, the more star systems will slip through your fingers.
+Standard error and confidence intervals are powerful tools that help us understand the precision of sample estimates in representing the population. By recognizing and calculating these measures, we can make more informed inferences and express the reliability of our findings with greater clarity.
