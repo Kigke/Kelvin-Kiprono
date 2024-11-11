@@ -28,8 +28,8 @@ enableEmoji = true
     style = "github"
     
 [params]
-  orgName = "RStudio"
-  orgLocal = "Anywhere"
+  orgName = "Kiprono"
+  orgLocal = "Kelvin"
   description = "Blog and portfolio of projects by Kelvin Kiprono,Statistician and Data Analyst."
   favicon = "/img/img/Data.jpeg"
   logo = "/img/Data.jpeg"
