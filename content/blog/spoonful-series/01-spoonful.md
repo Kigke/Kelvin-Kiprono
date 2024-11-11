@@ -1,5 +1,5 @@
 ---
-title: "Statistical Analysis using R"
+title: "Introduction to Statistical Data Analysis using R"
 weight: 1
 subtitle: "Introduction to R"
 excerpt: "R is a programming language used for statistical analysis, data visualization, and data science. It’s known for its powerful data manipulation capabilities, extensive libraries, and active community, making it ideal for handling complex data and creating visual reports."
