@@ -26,7 +26,9 @@ data <- data.frame(
 print(head(data))
 ```
 ## Filtering Data
+
 Use filter() to subset rows based on conditions.
+
 ```{r}
 # Filter rows where age is greater than 30
 filtered_data <- data %>% 
@@ -88,11 +90,13 @@ combined_data <- data %>%
 print(combined_data)
 ```
 ## Other Helpful Functions
+
 - distinct(): Removes duplicate rows.
 - rename(): Renames columns.
 - join(): Combines two data frames by a common column.
 
 ## Rename a column
+
 ```{r}
 renamed_data <- data %>% rename(annual_income = income)
 print(renamed_data)
