@@ -12,38 +12,13 @@ categories:
 ---
 
 
-
-``` r
+``` {r}
 library(readxl)
 sample_data1<- read_excel("C:/Users/Admin/Downloads/sample_data_1_1_.xlsx")
 View(sample_data1)
 ```
 
-
-``` r
+``` {r}
 library(survey)
-```
-
-```
-## Loading required package: grid
-```
-
-```
-## Loading required package: Matrix
-```
-
-```
-## Loading required package: survival
-```
-
-```
-## 
-## Attaching package: 'survey'
-```
-
-```
-## The following object is masked from 'package:graphics':
-## 
-##     dotchart
 ```
 
