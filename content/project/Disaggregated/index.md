@@ -71,6 +71,12 @@ Disaggregation can help ensure that all groups, especially marginalized or under
 - Ethnic or Cultural Background: Race, ethnicity, or cultural affiliation.
 - Socioeconomic Variables: Employment status, income level, job sector.
 
+
+``` r
+library(readxl)
+sample_data1 <- read_excel("C:/Users/hp/Downloads/sample_data_1_1_.xlsx")
+View(sample_data1)
+```
 ## Conclusion
 
 In summary, disaggregated data from surveys enables more in-depth analysis and understanding, leading to more informed decisions, targeted interventions, and fairer policies.
