@@ -20,6 +20,46 @@ layout: single
 library(palmerpenguins)
 library(tidyverse)
 ```
+```{r}
+head(penguins,5)
+```
+```{r}
+tail(penguins,5)
+```
+```{r}
+levels(penguins$species)
+```
+```{r}
+levels(penguins$sex)
+count(penguins,sex)
+```
+```{r}
+ggplot(penguins,aes(flipper_length_mm,body_mass_g,colour = sex)) +
+  geom_point() + 
+  geom_smooth(method='lm')+
+  theme_minimal()+
+  ggthemes::theme_tufte() +
+  ggtitle("Relationship between flipper_length and body mass based on sex")
+```
+The plot shows relationship between flipper_length and body mass differentiated by sex.
+ggthemes:: theme_tufte() removes the unnecessary background grids and colours.
+
+```{r}
+library(plotly)
+```
+Plotly is an interactive graphing library for R that makes it easy to create interactive, web-ready visualizations. It is particularly useful for exploring data, sharing findings, and building dashboards with enhanced user experiences.
+
+```{r}
+relationship <- ggplot(penguins,aes(flipper_length_mm,body_mass_g,colour = sex)) +
+  geom_point() + 
+  geom_smooth(method='lm')+
+  theme_minimal()+
+  ggthemes::theme_tufte() +
+  ggtitle("Relationship between flipper_length and body mass based on sex")
+```
+```{r}
+ggplotly(relationship)
+```
 
 ```{r}
 ggplot(data = penguins, aes(x = flipper_length_mm)) +
@@ -27,11 +67,10 @@ ggplot(data = penguins, aes(x = flipper_length_mm)) +
   scale_fill_manual(values = c("darkorange","darkorchid","cyan4"))
 ```
 
-Plotly is an interactive graphing library for R that makes it easy to create interactive, web-ready visualizations. It is particularly useful for exploring data, sharing findings, and building dashboards with enhanced user experiences.
 
-```{r}
-library(plotly)
-```
+
+
+
 ```{r}
 Flipper <- ggplot(data = penguins, aes(x = flipper_length_mm)) +
   geom_histogram(aes(fill = species), alpha = 0.5, position = "identity") +
