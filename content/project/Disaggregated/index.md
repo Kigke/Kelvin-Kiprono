@@ -72,7 +72,7 @@ Disaggregation can help ensure that all groups, especially marginalized or under
 - Socioeconomic Variables: Employment status, income level, job sector.
 
 
-## Sample Project using survey data
+## Preparing data for analysis
 
 
 ``` r
@@ -348,7 +348,149 @@ head(sample_data_1b$sba , n = 10)
 ##  [1] 0 0 0 1 1 0 1 0 0 1
 ```
 
-## Conclusion
+## Constructing inequality dimensions
 
-In summary, disaggregated data from surveys enables more in-depth analysis and understanding, leading to more informed decisions, targeted interventions, and fairer policies.
+# Mother's age categories (variable v012)
+
+``` r
+summary(sample_data_1b$v012)
+```
+
+```
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   15.00   26.00   31.00   30.91   36.00   49.00
+```
+
+``` r
+sample_data_1c <- sample_data_1b %>%
+  mutate(mage =
+           as.factor(case_when(
+             v012 < 20 ~ '15-19 years',
+             v012 >= 20 & v012 <= 34 ~ '20-34 years',
+             v012 >= 35 & v012 <= 49 ~ '35-49 years')
+           )
+  )
+
+levels(sample_data_1c$mage)
+```
+
+```
+## [1] "15-19 years" "20-34 years" "35-49 years"
+```
+
+``` r
+count(sample_data_1c, mage)
+```
+
+```
+## # A tibble: 3 × 2
+##   mage            n
+##   <fct>       <int>
+## 1 15-19 years    72
+## 2 20-34 years  1793
+## 3 35-49 years   812
+```
+
+## Socioeconomic status (variable v190)
+
+``` r
+sample_data_1d <- sample_data_1c %>%
+  mutate(quintile =
+           fct_recode(v190,
+                      "Quintile 1 (poorest)" = "poorest",
+                      "Quintile 2" = "poorer",
+                      "Quintile 3" = "middle",
+                      "Quintile 4" = "richer",
+                      "Quintile 5 (richest)" = "richest")
+  )
+
+count(sample_data_1d, quintile)
+```
+
+```
+## # A tibble: 5 × 2
+##   quintile                 n
+##   <fct>                <int>
+## 1 Quintile 3             491
+## 2 Quintile 2             508
+## 3 Quintile 1 (poorest)   747
+## 4 Quintile 4             476
+## 5 Quintile 5 (richest)   455
+```
+## Mother's education (variable v149)
+
+``` r
+count(sample_data_1d, v149)
+```
+
+```
+## # A tibble: 6 × 2
+##   v149                     n
+##   <chr>                <int>
+## 1 complete primary       469
+## 2 complete secondary     805
+## 3 higher                 493
+## 4 incomplete primary     216
+## 5 incomplete secondary   647
+## 6 no education            47
+```
+
+``` r
+sample_data_1e <- sample_data_1d %>%
+  mutate(educatt =
+           fct_recode(v149,
+                      "No or primary education" = "no education",
+                      "No or primary education" = "incomplete primary",
+                      "No or primary education" = "complete primary",
+                      "Secondary or higher education" = "incomplete secondary",
+                      "Secondary or higher education" = "complete secondary",
+                      "Secondary or higher education" = "higher")
+  )
+
+count(sample_data_1e, educatt)
+```
+
+```
+## # A tibble: 2 × 2
+##   educatt                           n
+##   <fct>                         <int>
+## 1 No or primary education         732
+## 2 Secondary or higher education  1945
+```
+
+## Place of residence (variable v025)
+
+
+``` r
+sample_data_1f <- sample_data_1e %>%
+  mutate(urban =
+           fct_recode(v025,
+                      "Urban" = "urban",
+                      "Rural" = "rural")
+  )
+
+count(sample_data_1f, urban)
+```
+
+```
+## # A tibble: 2 × 2
+##   urban     n
+##   <fct> <int>
+## 1 Rural  1353
+## 2 Urban  1324
+```
+## Finalizing data object preparation by selecting specified variables
+
+
+``` r
+sample_data_2 <- sample_data_1f %>%
+  select(psu,
+         weight,
+         strata,
+         sba,
+         mage,
+         quintile,
+         educatt,
+         urban)
+```
 
