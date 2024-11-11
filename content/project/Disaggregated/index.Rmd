@@ -1,6 +1,81 @@
+## Sample Project using survey data
+
 ```{r}
 library(readxl)
-sample_data1 <- read_excel("C:/Users/hp/Downloads/sample_data_1_1_.xlsx")
-View(sample_data1)
+sample_data_1<- read_excel("C:/Users/hp/Downloads/sample_data_1_1_.xlsx")
 ```
+
+## Exploring the data
+```{r}
+library(tidyverse)
+library(dplyr)
+library(haven)
+```
+Using glimpse form the dplyr package we are able to see how our data looks like.Also using head() and tail() e can see the first five rows and last 5 rows.
+
+```{r}
+glimpse(sample_data_1)
+head(sample_data_1,5)
+tail(sample_data_1,5)
+```
+
+Obtaining the summary to get the picture of our data
+
+```{r}
+summary(sample_data_1)
+```
+
+## Sample sizes for education subgroup
+
+```{r}
+sample_data_1 %>%
+  group_by(v149) %>%
+  summarise(n())
+```
+
+## Sample sizes and proportion of records for education subgroup
+
+```{r}
+sample_data_1 %>%
+  group_by(v149) %>%
+  summarise(n = n()) %>%
+  mutate(p = n/sum(n))
+```
+
+## Constructing health indicators (skilled birth attendance)
+```{r}
+sample_data_1a <- sample_data_1 %>%
+  mutate(sba =
+           if_else(m3a == "yes"|
+                   m3b == "yes"|
+                   m3c == "yes"|
+                   m3d == "yes",
+                   1,0)
+         )
+```
+
+# Tabulate *sba* variable (skilled birth attendance)
+```{r}
+count(sample_data_1a, sba)
+```
+
+# # Replacing missing values in *sba* with zeros and inspecting results
+```{r}
+sample_data_1b <- sample_data_1a %>%
+  mutate(sba =
+           if_else(m3a == "yes"|
+                   m3b == "yes"|
+                   m3c == "yes"|
+                   m3d == "yes",
+                   1,0,0)
+         )
+count(sample_data_1b, sba)
+```
+
+# Inspecting R objects
+```{r}
+sample_data_1b
+head(sample_data_1b$sba , n = 10)
+```
+
 
