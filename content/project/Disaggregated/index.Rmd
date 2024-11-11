@@ -154,3 +154,136 @@ sample_data_2 <- sample_data_1f %>%
          urban)
 ```
 
+## Calculating disaggregated estimates using R
+
+```{r}
+library(survey)
+```
+
+# Specifying complex survey design using svydesign() function
+```{r}
+sample_data_2_design <- svydesign(id = ~ psu,
+                                  weights = ~ weight,
+                                  strata = ~ strata,
+                                  data = sample_data_2)
+
+summary(sample_data_2_design)
+```
+## Calculating  national averages and corresponding confidence intervals using svymean
+
+```{r}
+svymean1 <- svymean(~ sba,
+                    design = sample_data_2_design)
+
+confint(svymean1)
+```
+
+# Calculating national averages and corresponding confidencce intervals using svyciprop
+
+```{r}
+svyciprop(~ sba,
+          design = sample_data_2_design)
+```
+
+## Calculating disaggregated estimates for *sba* by wealth quintile
+```{r}
+svyby(~ sba,
+      by = ~ quintile,
+      design = sample_data_2_design,
+      FUN = svymean,
+      vartype = c("se", "ci"),
+      keep.names = F)
+```
+## Calculating disaggregated estimates for *sba* by education level
+```{r}
+svyby(~ sba,
+      by = ~ educatt,
+      design = sample_data_2_design,
+      FUN = svymean,
+      vartype = c("se", "ci"),
+      keep.names = F)
+```
+## Calculating disaggregated estimates for *sba* by place of residence
+```{r}
+svyby(~ sba,
+      by = ~ urban,
+      design = sample_data_2_design,
+      FUN = svymean,
+      vartype = c("se", "ci"),
+      keep.names = F)
+```
+## Calculating disaggregated estimates for a specific subgroup (e.g. urban areas)
+```{r}
+urban_subset_design <- subset(sample_data_2_design, urban == 'Urban')
+
+urban_subset_calc <- svyby(~ sba,
+                           by = ~ urban,
+                           design = urban_subset_design,
+                           FUN = svymean,
+                           vartype = c("se", "ci"),
+                           keep.names = F)
+
+urban_subset_calc
+```
+## Disaggregation by two dimensions of inequality (double disaggregation)
+```{r}
+svyby(~ sba,
+      by = ~ urban + educatt,
+      design = sample_data_2_design,
+      FUN = svymean,
+      vartype = c("se", "ci"),
+      keep.names = F)
+```
+# Unweighted sample size
+```{r}
+nrow(sample_data_2)
+```
+# Unweighted sample sizes for dimension of inequality subgroups
+```{r}
+count(sample_data_2, quintile)
+```
+# National average weighted population sizes
+```{r}
+sample_data_2 <- sample_data_2 %>%
+  mutate(size = 1)
+```
+```{r}
+sample_data_2_design <- svydesign(id = ~ psu,
+                                  weights = ~ weight,
+                                  strata = ~ strata,
+                                  data = sample_data_2)
+
+svytotal(~ size,
+         design = sample_data_2_design)
+```
+# Weighted population sizes for dimension of inequality subgroups
+```{r}
+sba_urban <- svyby(~ sba,
+                   by = ~ urban,
+                   design = sample_data_2_design,
+                   FUN = svymean,
+                   vartype = c("se", "ci")
+                   )
+```
+
+
+## Creating a function to calculate disaggregated estimates for several dimensions of inequality
+```{r}
+svyby_disaggregated <- function(variables){
+  svyby(~ sba,
+        by = reformulate(variables),
+        design = sample_data_2_design,
+        FUN = svymean,
+        vartype = c("se", "ci"),
+        keep.names = F)
+}
+```
+## Identify list of dimension of inequality variables
+```{r}
+variables <- c('urban', 'quintile', 'educatt', 'mage')
+```
+
+## Apply function svyby_disaggregated() to list of dimension of inequality variables
+```{r}
+lapply(variables, svyby_disaggregated)
+```
