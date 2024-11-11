@@ -10,7 +10,7 @@ audio_link_label: ""
 link_list_label: "CV" # bookmarks, elsewhere, etc.
 link_list:
 - name: RESUME
-  url: https://gray-fiona-11.tiiny.site
+  url: https://docs.google.com/document/d/1M8yqAdaRXCk0IyxvNUCzpMM8tKy5qQyWiCxywLpT5HA/edit?usp=sharing
 
 
 ---
