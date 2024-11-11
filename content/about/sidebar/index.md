@@ -2,11 +2,14 @@
 ## Configure sidebar content in narrow column
 author: "KELVIN KIPRONO"
 role: "STATISTICIAN AND DATA ANALYST"
-avatar_shape: square # circle, square, rounded
+avatar_shape: rounded # circle, square, rounded
 show_social_links: true # specify social accounts in site config
 show_audio_link: false
 audio_link_label: ""
 link_list_label: "CV"
+link_list:
+- name: Resume
+  url: 
 link_list_label: "Interests" # bookmarks, elsewhere, etc.
 link_list:
 - name: Statistical Computing
