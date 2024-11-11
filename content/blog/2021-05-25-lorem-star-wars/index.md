@@ -30,8 +30,8 @@ A confidence interval (CI) provides a range of values within which we expect the
 
 A confidence interval has two main parts:
 
-Point Estimate: The sample statistic we are using to estimate the population parameter (e.g., the sample mean).
-Margin of Error: The range that accounts for variability due to sampling error, often calculated as a multiple of the standard error.
+- Point Estimate: The sample statistic we are using to estimate the population parameter (e.g., the sample mean).
+- Margin of Error: The range that accounts for variability due to sampling error, often calculated as a multiple of the standard error.
 
 A 95% confidence interval means that if we were to draw 100 different samples and calculate the confidence interval for each, we would expect the true population mean to lie within these intervals in 95 of those samples. In other words, we can be 95% confident that our interval contains the true population parameter.
 
