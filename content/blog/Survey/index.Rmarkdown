@@ -1,7 +1,7 @@
 ---
-title: "Disaggregated data from surveys"
-subtitle: "How to analyze survey data."
-excerpt: "Add tabbed sections with code and results."
+title: "Simple Linear Regression"
+subtitle: ""
+excerpt: "Linear regression is a statistical method used to model the relationship between a dependent variable and one or more independent variables. Its main goal is to find the best-fitting linear equation that can predict the dependent variable based on the independent variables."
 date: 2024-09-24
 author: "Kelvin Kiprono"
 draft: false
@@ -10,140 +10,25 @@ layout: single
 categories:
 - R Data Analysis
 ---
-We are going to
-```{r}
-library(readxl)
-sample_data1 <- read_excel("C:/Users/hp/Downloads/sample_data_1_1_.xlsx")
+Simple Linear Regression: Involves one independent variable and one dependent variable, modeled as:
 
+𝑦=𝛽0 +𝛽1𝑥+𝜖
 
-```
-```{r}
-library(survey)
-library(tidyverse)
-```
+where :
+- y is the dependent variable, 
 
+- x is the independent variable, 
 
-```{r}
-library(dplyr)
-glimpse(sample_data1)
-```
-```{r}
-str(sample_data1)
-```
-```{r}
-summary(sample_data1)
-```
+- 𝛽0 is the intercept, 
 
+- β 1 is the slope, and 
 
-```{r}
-sample_data1 %>% 
-  group_by(v149) %>% 
-  summarise(n=n()) %>% 
-  mutate(p=n/sum(n()))
-```
+- ϵ is the error term.
 
-```{r}
-sample_data1_a <- sample_data1 %>% 
-  mutate(sba =
-           if_else(m3a=='yes' |
-                   m3b=='yes' |
-                   m3c=='yes' |
-                   m3d=='yes',
-                   1,0,0))
-```
-```{r}
-count(sample_data1_a,sba)
-```
-```{r}
-## Constructing Inequality dimensions
-## Mothers age
-```
-```{r}
-str(sample_data1_a$v012)
-```
-```{r}
-##Categorizing mothers age into 3 subgroups
+## Assumptions
 
-sample_data1_b <- sample_data1_a %>% 
-  mutate(mage=
-           as.factor(case_when(
-             v012 < 20 ~ '15 - 19 years',
-             v012 >= 20 ~ '20 - 34 years',
-             v012 >=35 & v012 <= 49 ~ '34 - 49 years'
-           )))
-```
-```{r}
-count(sample_data1_b,mage)
-levels(sample_data1_b$mage)
-```
-```{r}
-## Socioeconomic status (variable v190)
-sample_data_1d <- sample_data1_b %>%
-  mutate(quintile =
-           fct_recode(v190,
-                      "Quintile 1 (poorest)" = "poorest",
-                      "Quintile 2" = "poorer",
-                      "Quintile 3" = "middle",
-                      "Quintile 4" = "richer",
-                      "Quintile 5 (richest)" = "richest")
-  )
-
-count(sample_data_1d, quintile)
-```
-
-
-```{r}
-## Mother's education (variable v149)
-count(sample_data_1d, v149)
-sample_data_1e <- sample_data_1d %>%
-  mutate(educatt =
-           fct_recode(v149,
-                      "No or primary education" = "no education",
-                      "No or primary education" = "incomplete primary",
-                      "No or primary education" = "complete primary",
-                      "Secondary or higher education" = "incomplete secondary",
-                      "Secondary or higher education" = "complete secondary",
-                      "Secondary or higher education" = "higher")
-  )
-
-count(sample_data_1e, educatt)
-```
-
-
-```{r}
-## Place of residence (variable v025)
-sample_data_1f <- sample_data_1e %>%
-  mutate(urban =
-           fct_recode(v025,
-                      "Urban" = "urban",
-                      "Rural" = "rural")
-  )
-
-count(sample_data_1f, urban)
-```
-
-
-```{r}
-## Finalizing data object preparation by selecting specified variables
-sample_data_2 <- sample_data_1f %>%
-  select(psu,
-         weight,
-         strata,
-         sba,
-         mage,
-         quintile,
-         educatt,
-         urban)
-```
-
-
-```{r}
-view(sample_data_2)
-```
-
-
-
-
-
-
+- Linearity: The relationship between the dependent and independent variables should be linear.
+- Independence: Observations should be independent of each other.
+- Homoscedasticity: The variance of error terms should be constant across all levels of the - independent variable.
+- Normality: The residuals (errors) should be normally distributed.
 
