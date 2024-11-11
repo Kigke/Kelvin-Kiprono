@@ -1,7 +1,7 @@
 ---
 title: "Disaggregated data from surveys"
 subtitle: "How to analyze survey data."
-excerpt: "Add tabbed sections with code and results."
+excerpt: ""
 date: 2024-09-24
 author: "Kelvin Kiprono"
 draft: false
@@ -12,3 +12,65 @@ categories:
 ---
 
 
+Disaggregated data from surveys involves breaking down survey responses into smaller, more specific groups based on different characteristics or categories. This allows for more detailed analysis and helps to identify patterns, trends, or disparities that may not be visible in the aggregated data. The process of disaggregation can reveal important insights, particularly when working with diverse populations or when the goal is to make data-driven decisions that are inclusive and representative of different groups.
+
+### How Disaggregated Data is Created from Surveys
+
+- Survey Design:
+
+Before collecting data, the survey needs to be designed with questions that allow for the segmentation of responses. These questions should ask for variables that can be categorized, such as age, gender, region, or income.
+
+- Data Collection:
+
+During data collection, responses are recorded in a way that each respondent's answers can be associated with specific demographic or other contextual variables.
+
+- Data Segmentation:
+
+After the survey is completed, the data is analyzed by dividing it into sub-groups. This can be done by categorizing respondents according to different criteria:
+  - Demographic Variables: Age, gender, ethnicity, education, occupation, etc.
+  - Geographic Variables: Region, urban vs. rural, country, etc.
+  - Behavioral Variables: Employment status, health behaviors, or purchasing patterns.
+
+- Analysis of Disaggregated Data:
+
+Once the data is segmented, it is analyzed to reveal how different groups within the survey sample respond to specific questions. This allows for comparisons to be made between groups. For example, you might compare how men and women responded to a question on workplace satisfaction or how different income groups feel about healthcare access.
+
+## Examples of Disaggregated Data from Surveys
+
+- Income and Education Level in a Survey about Access to Technology:
+
+   - Aggregated Data: 70% of survey respondents report having access to a computer.
+   - Disaggregated Data:
+   
+     - 85% of individuals with a high school education or less report having access to a computer.
+     - 95% of individuals with a college degree or higher report having access to a computer.
+     - 60% of respondents with an annual income under $20,000 report having access to a computer, while 80% of those earning above $50,000 have access.
+
+## Why Disaggregate Survey Data?
+
+- Identifying Inequalities and Disparities:
+
+Disaggregation allows you to identify differences between groups that might not be evident in the overall data. For example, if there are significant gaps in satisfaction between men and women, or if rural populations have less access to services, this can inform targeted interventions.
+
+- Targeted Decision Making:
+
+Policy makers and businesses can use disaggregated data to make decisions that are more specific to the needs of certain groups. For instance, a government might use disaggregated survey data on healthcare to allocate more resources to underserved areas.
+
+- Improving Program Design:
+
+Disaggregated data helps organizations tailor their programs to meet the needs of specific sub-groups. For example, a nonprofit working on educational programs might disaggregate data by age or socioeconomic status to design programs that address the unique challenges of different populations.
+
+- Transparency and Accountability:
+
+Disaggregation can help ensure that all groups, especially marginalized or underrepresented populations, are considered in the data analysis and that they are not overlooked in decision-making processes.
+
+## Common Variables for Disaggregation in Survey Data
+- Demographic Variables: Age, gender, income level, educational attainment, family status.
+- Geographic Variables: Urban vs. rural, region, country, neighborhood.
+- Health and Disability Variables: Chronic conditions, disability status.
+- Ethnic or Cultural Background: Race, ethnicity, or cultural affiliation.
+- Socioeconomic Variables: Employment status, income level, job sector.
+
+## Conclusion
+
+In summary, disaggregated data from surveys enables more in-depth analysis and understanding, leading to more informed decisions, targeted interventions, and fairer policies.
