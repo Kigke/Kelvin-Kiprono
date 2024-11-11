@@ -118,7 +118,7 @@ enableEmoji = true
     name = "Projects"
     title = "Kelvin Kiprono: Projects"
     url = "/project/"
-    weight = 2
+    weight = 3
     
   # Configure footer  
   [[menu.footer]]
