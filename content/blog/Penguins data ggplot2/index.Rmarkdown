@@ -9,7 +9,7 @@ draft: false
 images:
 series:
 tags:
-categories:
+categories: R Data Analysis
 layout: single
 ---
 
@@ -27,7 +27,7 @@ The grammar of graphics in ggplot2 consists of several components:
 - Coordinates (coord): Control the mapping of data to the plotting space.
 - Themes: Adjust the non-data elements, such as text, axes, backgrounds, and colors.
 
-We are going to explore the penguins data from the palmerpenguins dataset
+We are going to explore the penguins data from the palmerpenguins package.
 
 ## Loading dataset
 
