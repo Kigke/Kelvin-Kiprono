@@ -96,7 +96,7 @@ enableEmoji = true
   [[params.social]]
       icon      = "envelope" # icon name without the 'fa-'
       icon_pack = "fas"
-      url       = "/contact"
+      url       = "https://mail.google.com/mail/u/0/#inbox"
 
 [taxonomies]
   category = "categories"
