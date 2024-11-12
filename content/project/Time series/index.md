@@ -6,7 +6,7 @@ date: 2024-09-10
 author: "Kelvin Kiprono"
 draft: false
 tags:
-  - hugo-site
+  - Time Series
 categories:
 - Time Series
 layout: single
