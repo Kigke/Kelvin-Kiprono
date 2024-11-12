@@ -192,7 +192,8 @@ plot(model)
 ```
 
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-9-1.png" width="672" />
-Q-Q Residual plot - Residuals are approximately normal, and the normality assumption holds.
+
+- Q-Q Residual plot - Residuals are approximately normal, and the normality assumption holds.
 
 
 

@@ -114,7 +114,8 @@ To ensure the model is valid, we perform diagnostic checks, including evaluating
 par(mfrow = c(2, 2))
 plot(model)
 ```
-Q-Q Residual plot - Residuals are approximately normal, and the normality assumption holds.
+
+- Q-Q Residual plot - Residuals are approximately normal, and the normality assumption holds.
 
 
 
