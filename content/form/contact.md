@@ -1,7 +1,7 @@
 ---
 title: Contact
 name: Contact Us Form
-description: "Want to get in touch? Fill out the form below or reach out through my socials."
+description: "Want to get in touch? Fill out the form below or reach out through any of my socials."
 date: 2019-02-25T13:38:41-06:00
 draft: false
 url: contact
