@@ -2,7 +2,7 @@
 title: "Disaggregated data from surveys"
 subtitle: "How to analyze survey data."
 excerpt: ""
-date: 2024-09-24
+date: 2024-10-24
 author: "Kelvin Kiprono"
 draft: false
 # layout options: single, single-sidebar
