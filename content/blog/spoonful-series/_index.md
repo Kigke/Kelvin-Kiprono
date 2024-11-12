@@ -36,7 +36,7 @@ cascade:
     text_series_label: "In this series" 
     text_contents_label: "On this page" 
   tags:
-  - hugo-site
+  - Data Analysis
   categories:
 
 ---

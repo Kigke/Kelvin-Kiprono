@@ -3,7 +3,7 @@ title: "Data Import and Export in R"
 weight: 2
 subtitle: ""
 excerpt: "Data import and export in R are essential for data analysis, allowing you to work with data from various sources and save your results. R supports importing and exporting different file formats, such as CSV, Excel, and text files, using both built-in functions and packages."
-date: 2024-09-01
+date: 2024-09-04
 draft: false
 ---
 
