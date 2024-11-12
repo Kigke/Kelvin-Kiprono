@@ -2,7 +2,7 @@
 title: "Linear Regression"
 subtitle: ""
 excerpt: ""
-date: 2024-08-30
+date: 2024-09-12
 author: "Kelvin Kiprono"
 draft: false
 tags:

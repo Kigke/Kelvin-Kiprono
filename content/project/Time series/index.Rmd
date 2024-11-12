@@ -8,6 +8,7 @@ draft: false
 tags:
   - Statistical Data Analysis
 categories:
+- Time Series
  
 layout: single
 links: 
