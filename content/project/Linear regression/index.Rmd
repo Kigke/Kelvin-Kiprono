@@ -35,7 +35,7 @@ sum(is.na(airquality$Ozone))  # Count of missing values
 ## Remove rows with missing values
 ```{r}
 cleaned_data <- na.omit(airquality)
-cleaned_data
+head(cleaned_data,5)
 ```
 Alternatively, impute missing values with the mean (if preferred)
 
