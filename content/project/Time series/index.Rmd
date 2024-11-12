@@ -6,7 +6,7 @@ date: 2024-09-10
 author: "Kelvin Kiprono"
 draft: false
 tags:
-  - hugo-site
+  - Statistical Data Analysis
 categories:
  
 layout: single
