@@ -61,7 +61,7 @@ Residuals vs Fitted Plot: Check for homoscedasticity.
 - VIF (Variance Inflation Factor): To check for multicollinearity (high VIF suggests collinearity).
 
 ### Example in R:
-**##Note**
+**Note**
 The regression analysis presented below is based on a sample example and is intended solely for educational and illustrative purposes. The interpretations and recommendations made here should not be generalized to real-world datasets without careful consideration of the specific context, data characteristics, and additional model diagnostics. For actual data, it's essential to verify the assumptions, check for multicollinearity, and possibly refine the model through techniques like increasing the sample size.
 
 Let’s say we have a dataset where we want to predict the price of a house based on square footage (sqft), the number of bedrooms (bedrooms), and the age of the house (age).
