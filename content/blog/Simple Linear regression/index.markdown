@@ -15,6 +15,7 @@ Simple Linear Regression: Involves one independent variable and one dependent va
 𝑦=𝛽0 +𝛽1𝑥+𝜖
 
 where :
+
 - y is the dependent variable, 
 
 - x is the independent variable, 
