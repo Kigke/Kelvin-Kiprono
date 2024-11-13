@@ -31,8 +31,8 @@ enableEmoji = true
   orgName = "Kiprono"
   orgLocal = "Kelvin"
   description = "Blog and portfolio of projects by Kelvin Kiprono,Statistician and Data Analyst."
-  favicon = "/img/img/Data.jpeg"
-  logo = "/img/Data.jpeg"
+  favicon = "/img/img/Datascience.jpeg"
+  logo = "/img/Datascience.jpeg"
   mainSections = ["blog", "project", "about"]
   navallcaps = true
   # show/hide social icons in site header & footer
