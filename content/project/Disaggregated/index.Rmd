@@ -85,7 +85,7 @@ library(tidyverse)
 library(dplyr)
 library(haven)
 ```
-Using glimpse form the dplyr package we are able to see how our data looks like.Also using head() and tail() e can see the first five rows and last 5 rows.
+Using glimpse form the dplyr package we are able to see how our data looks like.Also using head() and tail() we can see the first five rows and last 5 rows.
 
 ```{r}
 glimpse(sample_data_1)
