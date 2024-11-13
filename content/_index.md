@@ -2,7 +2,7 @@
 title: "Kelvin Kiprono"
 subtitle: "STATISTICIAN AND DATA ANALYST"
 description: ""
-date: 2024-02-18T12:27:33-06:00
+date: 2024-09-18T12:27:33-06:00
 images:
   - img/visualization.gif
 image_left: true
