@@ -41,6 +41,7 @@ Where:
    - For example, check for missing values and outliers.
    
 ## Fit the Model 
+
 Use the lm() function in R to fit a multiple linear regression model.
 
 - model <- lm(dependent_variable ~ independent_variable1 + independent_variable2 + ..., data = your_data)
