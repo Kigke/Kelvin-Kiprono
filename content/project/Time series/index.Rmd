@@ -26,24 +26,37 @@ Let us explore sample data from base R
 data("austres")
 ```
 This data represents the Quarterly Time Series of the Number of Australian Residents
-```{r eval=FALSE}
+```{r echo=FALSE,warning=FALSE}
 library(dplyr)
+```
+
+```{r}
 glimpse(austres)
 ```
-```{r}
+
+
+```{r echo=FALSE,warning=FALSE}
 library(tseries)
+
+```
+
+```{r}
 my_series <- ts(data = austres,start = 1971,end = 1993,frequency = 4)
 my_series
 ```
-
 ```{r}
-plot.ts(austres,main=" Number of Australian Residents")
+library(ggplot2)
+library(forecast)
+ autoplot(austres) +ggtitle("Number of Australian Residents from 1971 to 1993")
+
 
 ```
+The plot indicates that there was a significant increase in population from the year 1971 to 1993.
+
 ## Decompose the time series
 ```{r}
-stl_result<- stl(austres,s.window = "periodic",t.window = 1)
-plot(stl_result)
+stl_result<- stl(austres,s.window = "periodic")
+autoplot(stl_result)
 ```
 - S.window controls how fast the seasonal effects can change overtime.
    - setting s.window = **periodic** forces seasonal effects to be identical across the year.
@@ -55,14 +68,15 @@ Using the Augmented Dickey-Fuller(ADF) to check if the series is stationary.If n
 ```{r}
 adf.test(austres)
 ```
-```{r}
+```{r warning=FALSE}
 diff1 <- diff(austres,differences = 1)
 adf.test(diff1)
 diff2 <- diff(austres,differences = 2)
 adf.test(diff2)
 ```
 ```{r}
-plot(diff2,main = "Number of Australian Residents,difference = 2",xlab = "year")
+autoplot(diff2) +ggtitle("Number of Australian Residents,difference = 2")
+
 ```
 ## Fitting an ARIMA Model
 ```{r}
@@ -76,7 +90,7 @@ forecasted <- forecast(fit,h=5)
 forecasted
 ```
 ```{r}
-plot(forecasted)
+autoplot(forecasted)
 ```
 
 

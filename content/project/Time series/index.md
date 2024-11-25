@@ -28,20 +28,40 @@ data("austres")
 ```
 This data represents the Quarterly Time Series of the Number of Australian Residents
 
+```
+## 
+## Attaching package: 'dplyr'
+```
+
+```
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+```
+
+```
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+```
+
+
 ``` r
-library(dplyr)
 glimpse(austres)
 ```
 
-``` r
-library(tseries)
 ```
+##  Time-Series [1:89] from 1971 to 1993: 13067 13130 13198 13254 13304 ...
+```
+
+
 
 ```
 ## Registered S3 method overwritten by 'quantmod':
 ##   method            from
 ##   as.zoo.data.frame zoo
 ```
+
 
 ``` r
 my_series <- ts(data = austres,start = 1971,end = 1993,frequency = 4)
@@ -75,20 +95,23 @@ my_series
 ## 1993 17661.5
 ```
 
-
 ``` r
-plot.ts(austres,main=" Number of Australian Residents")
+library(ggplot2)
+library(forecast)
+ autoplot(austres) +ggtitle("Number of Australian Residents from 1971 to 1993")
 ```
 
-<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+The plot indicates that there was a significant increase in population from the year 1971 to 1993.
+
 ## Decompose the time series
 
 ``` r
-stl_result<- stl(austres,s.window = "periodic",t.window = 1)
-plot(stl_result)
+stl_result<- stl(austres,s.window = "periodic")
+autoplot(stl_result)
 ```
 
-<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-7-1.png" width="672" />
 - S.window controls how fast the seasonal effects can change overtime.
    - setting s.window = **periodic** forces seasonal effects to be identical across the year.
 - t.window controls how fast the trend can change overtime.
@@ -130,10 +153,6 @@ adf.test(diff2)
 ```
 
 ```
-## Warning in adf.test(diff2): p-value smaller than printed p-value
-```
-
-```
 ## 
 ## 	Augmented Dickey-Fuller Test
 ## 
@@ -143,10 +162,10 @@ adf.test(diff2)
 ```
 
 ``` r
-plot(diff2,main = "Number of Australian Residents,difference = 2",xlab = "year")
+autoplot(diff2) +ggtitle("Number of Australian Residents,difference = 2")
 ```
 
-<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-8-1.png" width="672" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-10-1.png" width="672" />
 ## Fitting an ARIMA Model
 
 ``` r
@@ -188,10 +207,10 @@ forecasted
 ```
 
 ``` r
-plot(forecasted)
+autoplot(forecasted)
 ```
 
-<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-11-1.png" width="672" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-13-1.png" width="672" />
 
 
 
@@ -199,7 +218,7 @@ plot(forecasted)
 checkresiduals(fit)
 ```
 
-<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-12-1.png" width="672" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-14-1.png" width="672" />
 
 ```
 ## 
