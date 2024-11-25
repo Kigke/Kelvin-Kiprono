@@ -20,7 +20,8 @@ The diamonds dataset, included in R's ggplot2 package, is a widely used dataset 
 -How do attributes like cut, clarity, and color influence price?
 -Are there patterns or correlations between variables like carat and price?
 
-##Description of Variables
+## Description of Variables
+
 -price:Numeric; the price of the diamond in US dollars.
 -carat:Numeric; weight of the diamond (1 carat = 200 mg).
 -cut:Categorical; quality of the diamond's cut: Fair, Good, Very Good, Premium, Ideal.
@@ -49,7 +50,7 @@ library(tidyverse)
 library(dplyr)
 ```
 ## Exploratory Data Analysis (EDA)
-*Univariate Analysis*
+# Univariate Analysis
 
 **Price Distribution**
 -Visualization: Histogram.
@@ -65,8 +66,10 @@ ggplot(diamonds, aes(x = price)) +
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-2-1.png" width="672" />
 
 **Carat Distribution**
--Visualization: Boxplot.
--Insight: Highlights common carat sizes and outliers.
+
+- Visualization: Boxplot.
+- Insight: Highlights common carat sizes and outliers.
+
 
 ``` r
 ggplot(diamonds, aes(y = carat)) +
@@ -77,8 +80,9 @@ ggplot(diamonds, aes(y = carat)) +
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-3-1.png" width="672" />
 
 **Cut Quality Distribution**
--Visualization: Bar chart.
--Insight: Shows the frequency of different cut categories.
+
+- Visualization: Bar chart.
+- Insight: Shows the frequency of different cut categories.
 
 
 ``` r
@@ -89,11 +93,13 @@ ggplot(diamonds, aes(x = cut)) +
 
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 
-*Bivariate Analysis*
+**BIVARIATE ANALYSIS**
 
 **Carat vs. Price**
--Visualization: Scatter plot.
--Insight: Examines the relationship between carat size and price.
+
+- Visualization: Scatter plot.
+- Insight: Examines the relationship between carat size and price.
+
 
 ``` r
 ggplot(diamonds, aes(x = carat, y = price)) +
@@ -103,8 +109,10 @@ ggplot(diamonds, aes(x = carat, y = price)) +
 
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-5-1.png" width="672" />
 **Price by Cut**
--Visualization: Boxplot.
--Insight: Compares price ranges across cut categories.
+
+- Visualization: Boxplot.
+- Insight: Compares price ranges across cut categories.
+
 
 ``` r
 ggplot(diamonds, aes(x = cut, y = price)) +
@@ -115,8 +123,9 @@ ggplot(diamonds, aes(x = cut, y = price)) +
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-6-1.png" width="672" />
 
 **Price by Clarity**
--Visualization: Violin plot.
--Insight: Shows the distribution of price for each clarity grade.
+
+- Visualization: Violin plot.
+- Insight: Shows the distribution of price for each clarity grade.
 
 
 ``` r
@@ -126,10 +135,12 @@ ggplot(diamonds, aes(x = clarity, y = price)) +
 ```
 
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-7-1.png" width="672" />
-*Multivariate Analysis*
- - Carat vs. Price by Clarity
--Visualization: Scatter plot with clarity as color.
--Insight: Explores how clarity influences the carat-price relationship.
+**MULTIVARIATE ANALYSIS**
+
+**Carat vs. Price by Clarity**
+
+- Visualization: Scatter plot with clarity as color.
+- Insight: Explores how clarity influences the carat-price relationship.
 
 ``` r
 ggplot(diamonds, aes(x = carat, y = price, color = clarity)) +
@@ -139,9 +150,11 @@ ggplot(diamonds, aes(x = carat, y = price, color = clarity)) +
 
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-8-1.png" width="672" />
 
-- Carat vs. Price by Cut
--Visualization: Faceted scatter plot.
--Insight: Examines variations in the carat-price relationship across cuts.
+**Carat vs. Price by Cut**
+
+- Visualization: Faceted scatter plot.
+- Insight: Examines variations in the carat-price relationship across cuts.
+
 
 ``` r
 ggplot(diamonds, aes(x = carat, y = price)) +
@@ -151,9 +164,9 @@ ggplot(diamonds, aes(x = carat, y = price)) +
 ```
 
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-9-1.png" width="672" />
-*Price Density Plot*
--Visualization: Density plot.
--Insight: Highlights peaks and smooth distribution of prices.
+**Price Density Plot**
+- Visualization: Density plot.
+- Insight: Highlights peaks and smooth distribution of prices.
 
 
 ``` r
