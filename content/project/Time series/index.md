@@ -28,6 +28,10 @@ data("austres")
 ```
 This data represents the Quarterly Time Series of the Number of Australian Residents
 
+``` r
+library(dplyr)
+```
+
 ```
 ## 
 ## Attaching package: 'dplyr'
@@ -55,6 +59,10 @@ glimpse(austres)
 ```
 
 
+
+``` r
+library(tseries)
+```
 
 ```
 ## Registered S3 method overwritten by 'quantmod':
