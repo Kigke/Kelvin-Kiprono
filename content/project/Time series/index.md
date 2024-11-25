@@ -8,6 +8,7 @@ draft: false
 tags:
   - Statistical Data Analysis
 categories:
+- Time Series
  
 layout: single
 links: 
@@ -29,31 +30,7 @@ This data represents the Quarterly Time Series of the Number of Australian Resid
 
 ``` r
 library(dplyr)
-```
-
-```
-## 
-## Attaching package: 'dplyr'
-```
-
-```
-## The following objects are masked from 'package:stats':
-## 
-##     filter, lag
-```
-
-```
-## The following objects are masked from 'package:base':
-## 
-##     intersect, setdiff, setequal, union
-```
-
-``` r
 glimpse(austres)
-```
-
-```
-##  Time-Series [1:89] from 1971 to 1993: 13067 13130 13198 13254 13304 ...
 ```
 
 ``` r

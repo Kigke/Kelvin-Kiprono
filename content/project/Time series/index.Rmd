@@ -26,7 +26,7 @@ Let us explore sample data from base R
 data("austres")
 ```
 This data represents the Quarterly Time Series of the Number of Australian Residents
-```{r}
+```{r eval=FALSE}
 library(dplyr)
 glimpse(austres)
 ```
