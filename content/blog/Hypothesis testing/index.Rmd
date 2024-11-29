@@ -1,0 +1,54 @@
+---
+title: "Hypothesis Testing"
+subtitle: ""
+excerpt: "Hypothesis testing is a statistical method used to determine if there is enough evidence to reject a null hypothesis (H0) in favor of an alternative hypothesis (𝐻𝑎 ). By analyzing sample data, the process involves setting a significance level, calculating a test statistic, and comparing it to a critical value or P-value to make data-driven decisions. Common tests include t-tests, z-tests, and chi-square tests, applied in diverse fields to validate assumptions and drive conclusions."
+date: 2024-11-29
+author: "Kelvin Kiprono"
+draft: false
+# layout options: single, single-sidebar
+layout: single
+categories:
+- R Data Analysis
+---
+## T-TEST 
+
+The t tests are based on an assumption that data come from the normal distribution. In the one-sample case we thus have data x1, . . . , xn assumed to be independent realizations of random variables with distribution N(µ, σ2), which denotes the normal distribution with mean µ and variance σ2, and we wish to test the null hypothesis that µ = µ0. We canestimate the parameters µ and σ by the empirical mean x¯ and standard deviations, although we must realize that we could never pinpoint their values exactly.
+
+Here is an example concerning daily energy intake in kJ for 11 women
+
+```{r}
+daily.intake <- c(5260,5470,5640,6180,6390,6515,
++ 6805,7515,7515,8230,8770)
+```
+Let us first look at some simple summary statistics, even though these are hardly necessary for such a small data set
+
+```{r}
+mean(daily.intake)
+```
+```{r}
+sd(daily.intake)
+```
+```{r}
+quantile(daily.intake)
+```
+You might wish to investigate whether the women’s energy intake deviates systematically from a recommended value of 7725 kJ. Assuming that data come from a normal distribution, the object is to test whether this
+distribution might have mean µ = 7725. This is done with t.test as follows
+```{r}
+t.test(daily.intake,mu=7725)
+```
+You can immediately see that p < 0.05 and thus that (using the customary 5% level of significance) data deviate significantly from the hypothesis that the mean is 7725.
+
+**alternative hypothesis: true mean is not equal to 7725**
+
+This contains two important pieces of information:
+ - (a) the value wewanted to test whether the mean could be equal to (7725 kJ) 
+ - (b) that the test is two-sided (“not equal to”)
+ 
+ **95 percent confidence interval:**
+**5986.348 7520.925**
+
+This is a 95% confidence interval for the true mean; that is, the set of (hypothetical) mean values from which the data do not deviate significantly.
+It is based on inverting the t test by solving for the values of µ0 that cause t to lie within its acceptance region.
+
+The function t.test has a number of optional arguments, three of which are relevant in one-sample problems. We have already seen the use of mu to specify the mean value µ under the null hypothesis (default is mu=0). In
+addition, you can specify that a one-sided test is desired against alternatives greater than µ by using alternative="greater" or alternatives less than µ using alternative="less". The third item that can be specified is the confidence level used for the confidence intervals; you would write conf.level=0.99 to get a 99% interval.
