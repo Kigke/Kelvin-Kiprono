@@ -20,6 +20,16 @@ sidebar:
  
   show_sidebar_adunit: false # show ad container
 
+sidebar: 
+  title: Data visualization concept
+  description: |
+    The greatest value of a picture is when it forces us to notice what we never expected to see.
+    
+   
+  author: "Kelvin Kiprono"
+ 
+  show_sidebar_adunit: false # show ad container
+
 # set up common front matter for all pages inside blog/
 cascade:
   author: "Kelvin Kiprono"
