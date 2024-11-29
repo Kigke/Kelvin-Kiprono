@@ -1,5 +1,5 @@
 ---
-title: Kelvin Kiprono projects
+title: Kelvin Kiprono Projects
 description: "Your project will always be better if you share your ideas and collaborate."
 author: "Kelvin Kiprono"
 show_post_thumbnail: true
