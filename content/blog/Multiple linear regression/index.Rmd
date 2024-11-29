@@ -18,7 +18,8 @@ Multiple Linear Regression (MLR) is a statistical technique used to model the re
 The general formula for a multiple linear regression model is:
 
 **𝑌 = 𝛽0 + 𝛽1𝑋1 + 𝛽2𝑋2 + ⋯ +𝛽𝑛𝑋𝑛 + 𝜖**
-Where:
+
+ - Where:
 
  - Y = Dependent variable (the outcome you're trying to predict)
  - β0 = Intercept (the value of 𝑌 when all 𝑋𝑖are 0)
