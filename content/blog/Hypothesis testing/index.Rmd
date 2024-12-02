@@ -65,7 +65,7 @@ The Wilcoxon tests are susceptible to the problem of ties, where several observa
 - The test statistic V is the sum of the positive ranks.
 - The function wilcox.test takes arguments mu and alternative,just like t.test.
 
-#TWO SAMPLE T TEST
+# TWO SAMPLE T TEST
 The two-sample t test is used to test the hypothesis that two samples may be assumed to come from distributions with the same mean.
 The theory for the two-sample t test is not very different in principle from that of the one-sample test. Data are now from two groups, x11, . . . , x1n1 and x21, . . . , x2n2
 , which we assume are sampled from the normal distributions N(µ1, σ1^2) and N(µ2, σ2^2), and it is desired to test the null hypothesis µ1 = µ2.
