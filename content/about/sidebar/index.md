@@ -1,4 +1,4 @@
----
+ ---
 ## Configure sidebar content in narrow column
 author: "KELVIN KIPRONO"
 role: "STATISTICIAN AND DATA ANALYST"
@@ -10,8 +10,7 @@ audio_link_label: ""
 link_list_label: "CV" # bookmarks, elsewhere, etc.
 link_list:
 - name: RESUME
-  url: https://docs.google.com/document/d/1M8yqAdaRXCk0IyxvNUCzpMM8tKy5qQyWiCxywLpT5HA/edit?usp=sharing
-
+  url: 
 
 ---
 
