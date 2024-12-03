@@ -105,7 +105,7 @@ enableEmoji = true
 
 [menu]
   [[menu.header]]
-    name = "About"
+    name = "About me"
     title = "Kelvin Kiprono: About me"
     url = "/about/"
     weight = 8
