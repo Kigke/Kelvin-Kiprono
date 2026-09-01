@@ -1,0 +1,12 @@
+---
+title: "Python in RStudio"
+subtitle: ""
+excerpt: "RStudio isn't just for R — it has built-in support for Python through the reticulate package, letting you run Python code, share objects between R and Python, and use Python-based tools (pandas, matplotlib, scikit-learn) without leaving RStudio."
+date: 2026-09-01
+author: "Kelvin Kiprono"
+draft: false
+# layout options: single, single-sidebar
+layout: single
+categories:
+- R Data Analysis
+---

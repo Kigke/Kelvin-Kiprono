@@ -117,7 +117,7 @@ enableEmoji = true
   [[menu.header]]
     name = "Python"
     title = "Kelvin Kiprono: Python"
-    url = "/blog/"
+    url = "/Python/"
     weight = 3
    [[menu.header]]
     name = "Projects"
