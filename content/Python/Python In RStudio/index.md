@@ -10,3 +10,31 @@ layout: single
 categories:
 - R Data Analysis
 ---
+
+``` r
+library(reticulate)
+```
+
+```
+## Warning: package 'reticulate' was built under R version 4.4.3
+```
+
+
+``` r
+reticulate::use_virtualenv("my-python",required=TRUE)
+```
+
+
+``` r
+reticulate::virtualenv_install(envname ="my-python","pandas",ignore_installed = FALSE,pip_options = character())
+```
+
+```
+## Using virtual environment "my-python" ...
+```
+
+```
+## + "C:/Users/hp/Documents/.virtualenvs/my-python/Scripts/python.exe" -m pip install --upgrade --no-user pandas
+```
+
+

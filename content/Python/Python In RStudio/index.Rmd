@@ -10,3 +10,17 @@ layout: single
 categories:
 - R Data Analysis
 ---
+```{r}
+library(reticulate)
+```
+
+```{r}
+reticulate::use_virtualenv("my-python",required=TRUE)
+
+```
+
+```{r}
+reticulate::virtualenv_install(envname ="my-python","pandas",ignore_installed = FALSE,pip_options = character())
+```
+
+
