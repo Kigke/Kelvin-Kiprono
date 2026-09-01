@@ -2,7 +2,7 @@ baseURL = "https://kipronokelvin.netlify.app//"
 theme = "hugo-apero"
 languageCode = "en"
 title = "Personal website of Kelvin Kiprono"
-author = "Kelvin Kipron"
+author = "Kelvin Kiprono"
 copyright = "" # set to override the auto generated copyright using org info and now year
 googleAnalytics = ""
 disqusShortname = ""
@@ -33,7 +33,7 @@ enableEmoji = true
   description = "Blog and portfolio of projects by Kelvin Kiprono,Statistician and Data Analyst."
   favicon = "/img/img/Datascience.jpeg"
   logo = "/img/Datascience.jpeg"
-  mainSections = ["blog", "project", "about"]
+  mainSections = ["blog", "project","Python","about"]
   navallcaps = true
   # show/hide social icons in site header & footer
   # configure social icons and links below in [[params.social]]
@@ -114,6 +114,11 @@ enableEmoji = true
     title = "Kelvin Kiprono: Blog"
     url = "/blog/"
     weight = 2
+  [[menu.header]]
+    name = "Python"
+    title = "Kelvin Kiprono: Python"
+    url = "/blog/"
+    weight = 3
    [[menu.header]]
     name = "Projects"
     title = "Kelvin Kiprono: Projects"
