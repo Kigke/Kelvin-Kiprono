@@ -8,7 +8,7 @@ draft: false
 # layout options: single, single-sidebar
 layout: single
 categories:
-- R Data Analysis
+- Python
 ---
 
 ``` r
@@ -19,13 +19,8 @@ library(reticulate)
 ## Warning: package 'reticulate' was built under R version 4.4.3
 ```
 
-
 ``` r
 reticulate::use_virtualenv("my-python",required=TRUE)
-```
-
-
-``` r
 reticulate::virtualenv_install(envname ="my-python","pandas",ignore_installed = FALSE,pip_options = character())
 ```
 
@@ -37,4 +32,16 @@ reticulate::virtualenv_install(envname ="my-python","pandas",ignore_installed = 
 ## + "C:/Users/hp/Documents/.virtualenvs/my-python/Scripts/python.exe" -m pip install --upgrade --no-user pandas
 ```
 
+``` python
+import pandas as pd
+df = pd.DataFrame({"x": [1,2,3]})
+print(df)
+```
+
+```
+##    x
+## 0  1
+## 1  2
+## 2  3
+```
 
