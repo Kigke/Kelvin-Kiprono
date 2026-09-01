@@ -1,5 +1,5 @@
 ---
-title: Kelvin Kiprono Blog
+title: "Python 101: Building Your Foundation""
 description: |
   The greatest value of a picture is when it forces us to notice what we never expected to see.
 author: "Kelvin Kiprono"
