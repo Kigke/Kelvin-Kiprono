@@ -143,3 +143,176 @@ name
 ```
 ## True
 ```
+
+**LISTS**
+
+On the surface, lists look and behave a lot like tuples. With lists, you can use index and slice notation, check for the existence of an element
+using in, and iterate over elements using a for loop.
+
+Unlike tuples, however, lists are **mutable**, meaning you can change the value at a given index even after the list has been created.
+
+*Creating Lists*
+A list literal looks almost exactly like a tuple literal, except that it’s surrounded by square brackets ([]) instead of parentheses:
+
+
+``` python
+names=["Kelvin","Nathan","Judy","Cate","Natalie"]
+names
+```
+
+```
+## ['Kelvin', 'Nathan', 'Judy', 'Cate', 'Natalie']
+```
+
+``` python
+type(names)
+```
+
+```
+## <class 'list'>
+```
+Like tuple values, list values are not required to be of the same type
+
+**Basic List Operations**
+
+Indexing and slicing operations work on lists the same way they do on tuples.
+You can access list elements using index notation:
+
+``` python
+names=["Kelvin","Nathan","Judy","Cate","Natalie"]
+names[1]
+```
+
+```
+## 'Nathan'
+```
+
+``` python
+names[2:4]
+```
+
+```
+## ['Judy', 'Cate']
+```
+You can check for the existence of list elements using the *in* operator:
+
+``` python
+"Natalie" in names
+```
+
+```
+## True
+```
+Lists are iterable, which means you can iterate over them with a for loop:
+
+``` python
+numbers=[1,2,3,5,7]
+for i in numbers:
+  print(i)
+```
+
+```
+## 1
+## 2
+## 3
+## 5
+## 7
+```
+**Changing Elements in Lists**
+
+You can think of a list as a sequence of numbered slots.Each slot holds a value, and every slot must be filled at all times. But you can swap out the value in a given slot with a new one whenever you want.
+
+The ability to swap values in a list for other values is called **mutability**. Lists are mutable. The elements of tuples can’t be swapped for
+new values, so tuples are said to be immutable.
+
+To swap one value in a list with another, assign the new value to a slot using index notation:
+
+``` python
+names=["Kelvin","Nathan","Judy","Cate","Natalie"]
+names
+```
+
+```
+## ['Kelvin', 'Nathan', 'Judy', 'Cate', 'Natalie']
+```
+
+``` python
+names[0]
+```
+
+```
+## 'Kelvin'
+```
+
+``` python
+names[0]="Sharon"
+```
+The value at index 0 changes from "Kelvin" to "Sharon"
+
+``` python
+names
+```
+
+```
+## ['Sharon', 'Nathan', 'Judy', 'Cate', 'Natalie']
+```
+You can change several values in a list at once with a slice assignment:
+
+``` python
+names[1:3]=["Sofia","Scott"]
+names
+```
+
+```
+## ['Sharon', 'Sofia', 'Scott', 'Cate', 'Natalie']
+```
+**Adding and Removing Elements**
+
+*list.insert()*
+
+The list.insert() method is used to insert a single new value into a list. It takes two parameters, an index i and a value x, and inserts the
+value x at index i in the list.
+
+
+``` python
+colors = ["red", "yellow", "green", "blue"]
+#insert color "orange" at index 1
+colors.insert(1,"orange")
+colors
+```
+
+```
+## ['red', 'orange', 'yellow', 'green', 'blue']
+```
+
+*list.pop()*
+
+The list.pop() method takes one parameter, an index i, and removes the value from the list at that index. The value that is removed is returned by the method:
+
+
+``` python
+names
+```
+
+```
+## ['Sharon', 'Sofia', 'Scott', 'Cate', 'Natalie']
+```
+
+``` python
+names.pop(3)
+```
+
+```
+## 'Cate'
+```
+The value at index 3 is removed and assigned to the variable names. When you inspect the names list, you can see that the string "cate" has indeed been removed
+
+``` python
+names
+```
+
+```
+## ['Sharon', 'Sofia', 'Scott', 'Natalie']
+```
+
+
