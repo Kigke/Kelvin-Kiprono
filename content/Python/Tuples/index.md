@@ -11,7 +11,9 @@ categories:
 - Python
 ---
 **What Is a Tuple?**
+
 The word tuple comes from mathematics, where it’s used to describe a finite ordered sequence of values.For example , (1,2,3) is a tuple containing three integers.
+
 Tuples are **ordered** because their elements appear in an ordered fashion.
 
 *How to Create a Tuple*
@@ -58,4 +60,83 @@ tuple("Python")
 ```
 ## ('P', 'y', 't', 'h', 'o', 'n')
 ```
+**Similarities Between Tuples and Strings**
 
+Tuples and strings have a lot in common. Both are sequence types with finite lengths, both support indexing and slicing, both are immutable, and both can be iterated over in a loop.
+
+The main difference between strings and tuples is that the elements of tuples can be any kind of value you like, whereas strings can only contain characters.
+
+``` python
+name =("David")
+name[1]
+```
+
+```
+## 'a'
+```
+The index notation [1] after the variable name tells Python to get the character at index 1 in the string "David". Since counting starts at zero,the character at index 1 is the letter "a".
+
+Tuples also support index notation:
+
+``` python
+values =[1,3,4,7,9,0]
+values[3]
+```
+
+```
+## 7
+```
+Another feature that strings and tuples have in common is slicing.
+
+``` python
+values =[1,3,4,7,9,0]
+values[2:4]
+```
+
+```
+## [4, 7]
+```
+The slice values[2:4] creates a new tuple containing all the integers in values starting from position 2 and going up to but not including position 4.
+
+**Tuples are immutable**
+
+This means you cannot change the value of an element in a tuple once it has been created.If you do try  to change the values then you'll raise a TypeError.
+
+**Tuples are iterable**
+
+You can loop over them
+
+``` python
+name = ("LEONARD")
+for i in name:
+  print(i)
+```
+
+```
+## L
+## E
+## O
+## N
+## A
+## R
+## D
+```
+***Checking for Existence of Values With (in)***
+
+You can check whether a value is contained in a tuple with the in keyword.
+
+``` python
+name
+```
+
+```
+## 'LEONARD'
+```
+
+``` python
+"O" in name
+```
+
+```
+## True
+```
