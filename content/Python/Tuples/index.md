@@ -1,7 +1,8 @@
 ---
-title: "Tuples"
+title: "Tuples, Lists, and Dictionaries"
 subtitle: ""
-excerpt: "Covers tuples as a fixed, unchangeable alternative to lists useful for data that shouldn't be modified, such as coordinates or fixed groupings of values."
+excerpt: "Explores Python's core data structures for storing groups of values. *Lists* are ordered and mutable ideal when data needs to change, allowing items to be added, removed, or updated after creation. *Tuples* are also ordered but immutable, making them a safer choice for fixed data like coordinates that shouldn't be modified. *Dictionaries* store data as key-value pairs rather than by position, enabling fast lookups by key, with the rule that keys must be unique while values can repeat or vary in type. 
+Together, these three structures cover most everyday use cases: use a list when order matters and data changes, a tuple when data should stay fixed, and a dictionary when you need to label and retrieve values by name."
 date: 2026-09-01
 author: "Kelvin Kiprono"
 draft: false
@@ -10,6 +11,8 @@ layout: single
 categories:
 - Python
 ---
+****TUPLES****
+
 **What Is a Tuple?**
 
 The word tuple comes from mathematics, where it’s used to describe a finite ordered sequence of values.For example , (1,2,3) is a tuple containing three integers.
