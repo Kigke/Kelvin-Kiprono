@@ -167,6 +167,7 @@ value x at index i in the list.
 
 ```{python}
 colors = ["red", "yellow", "green", "blue"]
+#insert color "orange" at index 1
 colors.insert(1,"orange")
 colors
 ```
