@@ -10,18 +10,18 @@ layout: single
 categories:
 - Python
 ---
-##What Is a Tuple?
+**What Is a Tuple?**
 The word tuple comes from mathematics, where it’s used to describe a finite ordered sequence of values.For example , (1,2,3) is a tuple containing three integers.
-Tuples are ordered because their elements appear in an ordered fashion.
+Tuples are **ordered** because their elements appear in an ordered fashion.
 
-##How to Create a Tuple
+*How to Create a Tuple*
 
 There are a few ways to create a tuple in Python. We’ll cover two of
 them:
 1. Tuple literals
 2. The built-in tuple()
 
-#Tuple Literals
+*Tuple Literals*
 
 Just like a string literal is a string that is explicitly created by surrounding some text with quotes, a tuple literal is a tuple that is written out explicitly as a comma-separated list of values surrounded by parentheses.
 Here’s an example of a tuple literal:
@@ -47,7 +47,8 @@ type(x)
 ## <class 'tuple'>
 ```
 
-##The Built-In tuple()
+**The Built-In tuple()**
+
 You can also use the built-in tuple() to create a tuple from another sequence type, such as a string:
 
 ``` python
