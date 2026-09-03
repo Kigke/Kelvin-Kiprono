@@ -2,7 +2,7 @@
 title: "Variables and Data Types"
 subtitle: "Variables"
 excerpt: "Learn how Python stores and labels data without requiring you to declare a type upfront. This section covers the core data types which are strings, integers, floats, and booleans and how Python infers type automatically at runtime."
-date: 2026-09-01
+date: 2026-09-02
 author: "Kelvin Kiprono"
 draft: false
 # layout options: single, single-sidebar
@@ -10,3 +10,322 @@ layout: single
 categories:
 - Python
 ---
+In Python, variables are names that can be assigned a value and then used to refer to that value throughout your code. Variables are fundamental to programming for two reasons:
+
+1.  Variables keep values accessible: For example, you can assign the result of some time-consuming operation to a variable so that your program doesn’t have to perform the operation each time you need to use the result.
+
+2.  Variables give values context: The number 38 could mean lots of different things, such as the number of students in a class, the number of times a user has accessed a website, and so on. Giving the value 38 a name like num_students makes the meaning of the value clear.
+
+Variable names are case sensitive, so a variable named greeting is not the same as a variable named Greeting. For instance, the following code produces a NameError:
+
+
+``` python
+greeting = "Hello, World"
+print(greeting)
+```
+
+```
+## Hello, World
+```
+
+##Rules for Valid Variable Names
+
+Variable names can be as long or as short as you like, but there are a few rules that you must follow. Variable names may contain uppercase and lowercase letters (A–Z, a–z), digits (0–9), and underscores (\_), but they cannot begin with a digit. For example, each of the following is a valid Python variable name: • string1 • \_a1p4a • list_of_names The following aren’t valid variable names because they start with a digit: • 9lives • 99_balloons • 2beOrNot2Be
+
+Descriptive variable names are essential, especially for complex programs. Writing descriptive names often requires using multiple words.For example s=1000 and seconds=1000.seconds is a better name than s because it provides more context.
+
+
+``` python
+s=1000
+seconds=10000
+```
+
+## DATA TYPES
+
+Python has several built-in data types used to store different kinds of values.
+
+## 1.Numeric types
+
+int — Integer
+
+Used for whole numbers.
+
+
+``` python
+age = 20
+marks = 85
+temperature = -5
+
+print(age)
+```
+
+```
+## 20
+```
+
+``` python
+print(type(age))
+```
+
+```
+## <class 'int'>
+```
+
+``` python
+print(type(marks))
+```
+
+```
+## <class 'int'>
+```
+
+*float — Decimal Number*
+
+Used for numbers containing decimals.
+
+
+``` python
+price = 99.50
+height = 1.75
+
+print(price)
+```
+
+```
+## 99.5
+```
+
+``` python
+print(type(price))
+```
+
+```
+## <class 'float'>
+```
+
+*complex — Complex Number*
+
+Contains a real and imaginary part.
+
+
+``` python
+z = 3 + 4j
+
+print(z)
+```
+
+```
+## (3+4j)
+```
+
+``` python
+print(z.real)
+```
+
+```
+## 3.0
+```
+
+``` python
+print(z.imag)
+```
+
+```
+## 4.0
+```
+
+``` python
+print(type(z))
+```
+
+```
+## <class 'complex'>
+```
+
+## 2. Boolean Type
+
+*bool* Stores either True or False.
+
+
+``` python
+is_student = True
+is_logged_in = False
+
+print(is_student)
+```
+
+```
+## True
+```
+
+``` python
+print(type(is_student))
+```
+
+```
+## <class 'bool'>
+```
+
+Booleans are commonly used in conditions:
+
+
+``` python
+age = 20
+
+if age >= 18:
+    print("Adult")
+else:
+    print("Minor")
+```
+
+```
+## Adult
+```
+
+## 3. String Type
+
+**str**
+
+Used to store text.
+
+
+``` python
+name = "John"
+message = 'Hello Python'
+
+print(name)
+```
+
+```
+## John
+```
+
+``` python
+print(type(name))
+```
+
+```
+## <class 'str'>
+```
+
+## 4. List Type
+
+**list** A list stores multiple values and is ordered and changeable (mutable).
+
+
+``` python
+fruits = ["apple", "banana", "orange"]
+
+print(fruits)
+```
+
+```
+## ['apple', 'banana', 'orange']
+```
+
+``` python
+print(fruits[0])
+```
+
+```
+## apple
+```
+
+## 5. Tuple Type
+
+**tuple** A tuple is ordered but cannot be changed (immutable).
+
+
+``` python
+coordinates = (10, 20)
+
+print(coordinates)
+```
+
+```
+## (10, 20)
+```
+
+``` python
+print(coordinates[0])
+```
+
+```
+## 10
+```
+
+## 6. Set Type
+
+**set** A set stores unique values and does not maintain normal index-based access.
+
+
+``` python
+numbers = {1, 2, 3, 4, 4, 5}
+
+print(numbers)
+```
+
+```
+## {1, 2, 3, 4, 5}
+```
+
+The duplicate 4 is removed.
+
+You can add values:
+
+
+``` python
+numbers.add(6)
+print(numbers)
+```
+
+```
+## {1, 2, 3, 4, 5, 6}
+```
+
+
+``` python
+a = {1, 2, 3}
+b = {3, 4, 5}
+
+print(a | b)  # Union
+```
+
+```
+## {1, 2, 3, 4, 5}
+```
+
+``` python
+print(a & b)  # Intersection
+```
+
+```
+## {3}
+```
+
+## 7. Dictionary Type
+
+**dict** A dictionary stores data as key-value pairs.
+
+
+``` python
+student = {
+    "name": "John",
+    "age": 20,
+    "course": "Python"
+}
+
+print(student)
+```
+
+```
+## {'name': 'John', 'age': 20, 'course': 'Python'}
+```
+
+``` python
+print(student["name"])
+```
+
+```
+## John
+```
