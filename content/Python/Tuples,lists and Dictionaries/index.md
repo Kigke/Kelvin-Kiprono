@@ -11,7 +11,7 @@ layout: single
 categories:
 - Python
 ---
-****TUPLES****
+## TUPLES
 
 **What Is a Tuple?**
 
@@ -144,7 +144,7 @@ name
 ## True
 ```
 
-**LISTS**
+## LISTS
 
 On the surface, lists look and behave a lot like tuples. With lists, you can use index and slice notation, check for the existence of an element
 using in, and iterate over elements using a for loop.
@@ -314,5 +314,170 @@ names
 ```
 ## ['Sharon', 'Sofia', 'Scott', 'Natalie']
 ```
+*list.append()*
 
+This method is used to append a new element to the end of a list:
+
+``` python
+names.append("Susan")
+names
+```
+
+```
+## ['Sharon', 'Sofia', 'Scott', 'Natalie', 'Susan']
+```
+*list.extend()*
+
+This method is used to add several new elements to the end of a list:
+
+``` python
+names.extend(["Milicent","Francis"])
+names
+```
+
+```
+## ['Sharon', 'Sofia', 'Scott', 'Natalie', 'Susan', 'Milicent', 'Francis']
+```
+## Nesting, Copying, and Sorting Tuples and Lists
+
+**Nesting Lists and Tuples**
+
+Lists and tuples can contain values of any type. That means lists and tuples can contain lists and tuples as values. A nested list or tuple is a list or tuple that is contained as a value in another list or tuple.
+
+For example, the following list has two values, both of which are other
+lists:
+
+``` python
+two_by_two = [[1,2],[3,4]]
+two_by_two
+```
+
+```
+## [[1, 2], [3, 4]]
+```
+
+``` python
+len(two_by_two)
+```
+
+```
+## 2
+```
+
+``` python
+two_by_two[0]
+```
+
+```
+## [1, 2]
+```
+
+``` python
+two_by_two[0][1]
+```
+
+```
+## 2
+```
+First, Python evaluates two_by_two[0] and returns [1, 2]. Then Python
+evaluates [1, 2][1] and returns the second element, 2.
+
+**Sorting Lists**
+Lists have a .sort() method that sorts all of the items in ascending order. By default, the list is sorted in alphabetical or numerical order depending on the type of elements in the list:
+
+``` python
+names
+```
+
+```
+## ['Sharon', 'Sofia', 'Scott', 'Natalie', 'Susan', 'Milicent', 'Francis']
+```
+
+``` python
+names.sort()
+names
+```
+
+```
+## ['Francis', 'Milicent', 'Natalie', 'Scott', 'Sharon', 'Sofia', 'Susan']
+```
+
+``` python
+nums=[23,21,54,2,34,87,51]
+nums.sort()
+nums
+```
+
+```
+## [2, 21, 23, 34, 51, 54, 87]
+```
+
+## DICTIONARIES
+
+Python dictionaries, like lists and tuples, store a collection of objects.
+However, instead of storing objects in a sequence, dictionaries hold information in pairs of data called key-value pairs. That is, each object in a dictionary has two parts: a key and a value.
+
+The key in a key-value pair is a unique name that identifies the value part of the pair.
+
+``` python
+cities = {
+  "Kenya" : "Nairobi",
+  "Uganda" : "Kampala",
+  "Congo" : "Kinshasha"}
+cities
+```
+
+```
+## {'Kenya': 'Nairobi', 'Uganda': 'Kampala', 'Congo': 'Kinshasha'}
+```
+Each key is separated from its value by a colon,each key value pair is separated by a comma and the entire dictionary is closed in curly brackets.
+When accessing dictionary values,you enclose the corresponding key in square brackets.
+
+``` python
+cities["Kenya"]
+```
+
+```
+## 'Nairobi'
+```
+**Adding and Removing Values in a Dictionary**
+
+Like lists, dictionaries are mutable data structures. This means you can add and remove items from a dictionary.
+
+``` python
+cities["Tanzania"]="Dodoma"
+cities
+```
+
+```
+## {'Kenya': 'Nairobi', 'Uganda': 'Kampala', 'Congo': 'Kinshasha', 'Tanzania': 'Dodoma'}
+```
+To remove an item from a dictionary, use the del keyword with the key for the value you want to delete:
+
+``` python
+del cities["Kenya"]
+cities
+```
+
+```
+## {'Uganda': 'Kampala', 'Congo': 'Kinshasha', 'Tanzania': 'Dodoma'}
+```
+If you try to access a value in a dictionary using a key that doesn’t exist,then Python raises a KeyError:
+
+``` python
+cities["Kenya"]
+```
+
+```
+## KeyError: 'Kenya'
+```
+You can check if a key exists in a dictionary using **in**
+
+``` python
+"Kenya" in cities
+```
+
+```
+## False
+```
 
