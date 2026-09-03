@@ -16,13 +16,13 @@ Collections of text in Python are called **strings**. Special functions called s
 
 *Strings are used to represent text* 
 
-**Strings have three important properties: **
+**Strings have three important properties:**
 
 1. Strings contain individual letters or symbols called characters.
 2. Strings have a length, defined as the number of characters the string contains.
 3. Characters in a string appear in a sequence, which means that each character has a numbered position in the string.
  
-##Determine the Length of a String 
+## Determine the Length of a String 
 
 The number of characters contained in a string, including spaces, is called the *length of the string*. For example, the string "abc" has a length of 3, and the string "Don't Panic" has a length of 11.
 
@@ -51,6 +51,7 @@ print(len(name))
 3. Slicing, which gets several characters from a string at once
 
 **String Concatenation**
+
 You can combine, or concatenate, two strings using the + operator:
 
 ``` python
@@ -63,13 +64,13 @@ full_name
 ```
 ## 'Monica Williams'
 ```
-Here, you use string concatenation twice on the same line. First, you concatenate first_name with " " to ensure a space appears after the first name in the final string. 
+Here, you use string concatenation twice on the same line. First, you concatenate first name with " " to ensure a space appears after the first name in the final string. 
 
 ## String Indexing
 
 Each character in a string has a numbered position called an index.
 
-You can access the character at the nth position by putting the number n between two square brackets ([]) immediately after the string:
+You can access the character at the nth position by putting the number n between two square brackets ([ ]) immediately after the string:
 
 ``` python
 color="Yellow"
