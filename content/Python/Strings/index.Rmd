@@ -1,0 +1,131 @@
+---
+title: "Strings and String Methods"
+subtitle: "Strings"
+excerpt: "Explore how text is handled in Python through string creation, concatenation, formatting with f-strings, and built-in methods like .upper() and slicing while understanding why strings can't be changed in place."
+date: 2026-09-02
+author: "Kelvin Kiprono"
+draft: false
+# layout options: single, single-sidebar
+layout: single
+categories:
+- Python
+---
+## Strings and Strings Methods
+
+Collections of text in Python are called **strings**. Special functions called string methods are used to manipulate strings. There are string methods for changing a string from lowercase to uppercase, removing whitespace from the beginning or end of a string, replacing parts of a string with different text, and much more.
+
+*Strings are used to represent text* 
+
+**Strings have three important properties: **
+
+1. Strings contain individual letters or symbols called characters.
+2. Strings have a length, defined as the number of characters the string contains.
+3. Characters in a string appear in a sequence, which means that each character has a numbered position in the string.
+ 
+##Determine the Length of a String 
+
+The number of characters contained in a string, including spaces, is called the *length of the string*. For example, the string "abc" has a length of 3, and the string "Don't Panic" has a length of 11.
+
+Python has a built-in len() function that you can use to determine the length of a string. 
+```{python}
+len("abcde")
+```
+```{python}
+name= "kelvin"
+print(len(name))
+```
+## Concatenation, Indexing, and Slicing
+
+1. Concatenation, which joins two strings together
+2. Indexing, which gets a single character from a string
+3. Slicing, which gets several characters from a string at once
+
+**String Concatenation**
+You can combine, or concatenate, two strings using the + operator:
+```{python}
+name1="Monica"
+name2="Williams"
+full_name= name1 + " "+name2
+full_name
+```
+Here, you use string concatenation twice on the same line. First, you concatenate first_name with " " to ensure a space appears after the first name in the final string. 
+
+## String Indexing
+
+Each character in a string has a numbered position called an index.
+
+You can access the character at the nth position by putting the number n between two square brackets ([]) immediately after the string:
+```{python}
+color="Yellow"
+color[1]
+```
+## String Slicing
+Suppose you need a string containing just the first three letters of the string "Yes Sir". You could access each character by index and concatenate them like this:
+```{python}
+condition ="Yes Sir"
+first_three= condition[0] + condition[1]+condition[2]
+first_three
+```
+You can extract a portion of a string, called a substring, by inserting
+a colon between two index numbers set inside square brackets like
+this:
+```{python}
+condition[0:3]
+```
+If you omit the first index in a slice, then Python assumes you want to
+start at index 0:
+```{python}
+condition[:3]
+```
+The slice [:3] is equivalent to the slice [0:3], so condition[:3] returns the first three characters in the string
+
+Similarly, if you omit the second index in the slice, then Python assumes you want to return the substring that begins with the character whose index is the first number in the slice and ends with the last character in the string:
+```{python}
+condition[3:]
+```
+## Strings Are Immutable
+
+Strings are immutable, which means that you can’t change them once you’ve created them. For instance, see what happens when you try to assign a new letter to one particular character of a string:
+```{python,error =TRUE}
+word = "Mountain"
+word[0]="F"
+```
+Python throws a TypeError and tells you that str objects don’t support item assignment.If you want to alter a string, then you must create an entirely new string. 
+
+## Converting String Case
+To convert a string to all lowercase letters, you use the string’s .lower() method. This is done by tacking .lower() onto the end of the string itself:
+```{python}
+"LEONARD".lower()
+```
+The dot (.) tells Python that what follows is the name of a method the lower() method in this case.
+
+The opposite of .lower() is .upper(), which converts every character in a string to uppercase:
+```{python}
+"leonard".upper()
+```
+## Removing Whitespace From a String
+
+Whitespace is any character that is printed as blank space. This includes things like spaces and line feeds, which are special characters that move output to a new line.
+
+Sometimes you need to remove whitespace from the beginning or end of a string. This is especially useful when working with strings that come from user input, which may include extra whitespace characters by accident.
+
+There are three string methods that you can use to remove whitespace
+from a string:
+1. .rstrip()
+2. .lstrip()
+3. .strip()
+
+.rstrip() removes whitespace from the right side of a string:
+```{python}
+name="Kelvin Kiprono    "
+name
+name.rstrip()
+```
+.lstrip() works just like .rstrip(), except that it removes whitespace from the left-hand side of the string:
+
+To remove whitespace from both the left and the right sides of the string at the same time, use .strip():
+```{python}
+word="    hey did you call him    "
+word
+word.strip()
+```
