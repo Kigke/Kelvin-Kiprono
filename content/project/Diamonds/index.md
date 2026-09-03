@@ -16,21 +16,35 @@ categories:
 The diamonds dataset, included in R's ggplot2 package, is a widely used dataset for practicing data visualization and analysis.
  - Objective: To uncover patterns, distributions, and relationships among diamond attributes using visualizations.
  - Key Questions:
+ 
 -What are the distributions of key variables like price and carat?
+
 -How do attributes like cut, clarity, and color influence price?
+
 -Are there patterns or correlations between variables like carat and price?
 
 ## Description of Variables
 
 -price:Numeric; the price of the diamond in US dollars.
+
 -carat:Numeric; weight of the diamond (1 carat = 200 mg).
+
 -cut:Categorical; quality of the diamond's cut: Fair, Good, Very Good, Premium, Ideal.
+
 -clarity:Categorical; internal purity: IF, VVS1, VVS2, VS1, VS2, SI1, SI2, I1.
+
 -color:Categorical; color grade: D (Colorless) to J (Noticeable Color).
 
 
 ``` r
 library(ggplot2)
+```
+
+```
+## Warning: package 'ggplot2' was built under R version 4.4.3
+```
+
+``` r
 library(tidyverse)
 ```
 
@@ -53,7 +67,9 @@ library(dplyr)
 # Univariate Analysis
 
 **Price Distribution**
+
 -Visualization: Histogram.
+
 -Insight: Identifies price range and skewness.
 
 
@@ -68,6 +84,7 @@ ggplot(diamonds, aes(x = price)) +
 **Carat Distribution**
 
 - Visualization: Boxplot.
+
 - Insight: Highlights common carat sizes and outliers.
 
 
@@ -82,6 +99,7 @@ ggplot(diamonds, aes(y = carat)) +
 **Cut Quality Distribution**
 
 - Visualization: Bar chart.
+
 - Insight: Shows the frequency of different cut categories.
 
 
@@ -185,18 +203,125 @@ Animate how the price distribution evolves for different cut or clarity categori
 
 ``` r
 library(gganimate)
-```
 
-```
-## Warning: package 'gganimate' was built under R version 4.4.2
-```
-
-``` r
 ggplot(diamonds, aes(x = price)) +
   geom_histogram(binwidth = 500, fill = "skyblue", color = "black") +
   labs(title = "Price Distribution by Cut", x = "Price", y = "Count") +
   transition_states(cut, transition_length = 2, state_length = 1) +
   labs(subtitle = "Cut: {closest_state}")
+```
+
+```
+## Warning: Cannot get dimensions of plot table. Plot region might not be fixed
+## Caused by error:
+## ! <gganim> object properties are invalid:
+## - @labels must be <ggplot2::labels>, not <list>
+```
+
+```
+## Warning: Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Caused by error:
+## ! <gganim> object properties are invalid:
+## - @labels must be <ggplot2::labels>, not <list>
 ```
 
 ![](index_files/figure-html/unnamed-chunk-11-1.gif)<!-- -->
@@ -213,21 +338,128 @@ ggplot(diamonds, aes(x = carat, y = price, color = clarity)) +
   labs(subtitle = "Clarity: {closest_state}")
 ```
 
+```
+## Warning: Cannot get dimensions of plot table. Plot region might not be fixed
+## Caused by error:
+## ! <gganim> object properties are invalid:
+## - @labels must be <ggplot2::labels>, not <list>
+```
+
+```
+## Warning: Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Caused by error:
+## ! <gganim> object properties are invalid:
+## - @labels must be <ggplot2::labels>, not <list>
+```
+
 ![](index_files/figure-html/unnamed-chunk-12-1.gif)<!-- -->
 
 ## Using patchwork (from patchwork package)
--Side-by-Side Comparison of Univariate Distributions
+Side-by-Side Comparison of Univariate Distributions
 Combine histograms of price and carat distributions.
 
 ``` r
 library(patchwork)
-```
 
-```
-## Warning: package 'patchwork' was built under R version 4.4.2
-```
-
-``` r
 plot_price <- ggplot(diamonds, aes(x = price)) +
   geom_histogram(binwidth = 500, fill = "blue") +
   labs(title = "Price Distribution", x = "Price", y = "Count")
@@ -269,6 +501,119 @@ ggplot(diamonds, aes(x = price, fill = clarity)) +
        subtitle = "Clarity: {closest_state}") +
   transition_states(clarity, transition_length = 2, state_length = 1) +
   theme_minimal()
+```
+
+```
+## Warning: Cannot get dimensions of plot table. Plot region might not be fixed
+## Caused by error:
+## ! <gganim> object properties are invalid:
+## - @labels must be <ggplot2::labels>, not <list>
+```
+
+```
+## Warning: Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Failed to plot frame
+## Caused by error:
+## ! <gganim> object properties are invalid:
+## - @labels must be <ggplot2::labels>, not <list>
 ```
 
 ![](index_files/figure-html/unnamed-chunk-15-1.gif)<!-- -->

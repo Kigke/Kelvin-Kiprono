@@ -16,16 +16,23 @@ categories:
 The diamonds dataset, included in R's ggplot2 package, is a widely used dataset for practicing data visualization and analysis.
  - Objective: To uncover patterns, distributions, and relationships among diamond attributes using visualizations.
  - Key Questions:
+ 
 -What are the distributions of key variables like price and carat?
+
 -How do attributes like cut, clarity, and color influence price?
+
 -Are there patterns or correlations between variables like carat and price?
 
 ## Description of Variables
 
 -price:Numeric; the price of the diamond in US dollars.
+
 -carat:Numeric; weight of the diamond (1 carat = 200 mg).
+
 -cut:Categorical; quality of the diamond's cut: Fair, Good, Very Good, Premium, Ideal.
+
 -clarity:Categorical; internal purity: IF, VVS1, VVS2, VS1, VS2, SI1, SI2, I1.
+
 -color:Categorical; color grade: D (Colorless) to J (Noticeable Color).
 
 ```{r}
@@ -37,7 +44,9 @@ library(dplyr)
 # Univariate Analysis
 
 **Price Distribution**
+
 -Visualization: Histogram.
+
 -Insight: Identifies price range and skewness.
 
 ```{r}
@@ -49,6 +58,7 @@ ggplot(diamonds, aes(x = price)) +
 **Carat Distribution**
 
 - Visualization: Boxplot.
+
 - Insight: Highlights common carat sizes and outliers.
 
 ```{r}
@@ -60,6 +70,7 @@ ggplot(diamonds, aes(y = carat)) +
 **Cut Quality Distribution**
 
 - Visualization: Bar chart.
+
 - Insight: Shows the frequency of different cut categories.
 
 ```{r}
@@ -161,7 +172,7 @@ ggplot(diamonds, aes(x = carat, y = price, color = clarity)) +
 ```
 
 ## Using patchwork (from patchwork package)
--Side-by-Side Comparison of Univariate Distributions
+Side-by-Side Comparison of Univariate Distributions
 Combine histograms of price and carat distributions.
 ```{r}
 library(patchwork)
