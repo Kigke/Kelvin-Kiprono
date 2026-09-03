@@ -28,9 +28,18 @@ print(greeting)
 ## Hello, World
 ```
 
-##Rules for Valid Variable Names
+## Rules for Valid Variable Names
 
-Variable names can be as long or as short as you like, but there are a few rules that you must follow. Variable names may contain uppercase and lowercase letters (A–Z, a–z), digits (0–9), and underscores (\_), but they cannot begin with a digit. For example, each of the following is a valid Python variable name: • string1 • \_a1p4a • list_of_names The following aren’t valid variable names because they start with a digit: • 9lives • 99_balloons • 2beOrNot2Be
+Variable names can be as long or as short as you like, but there are a few rules that you must follow. Variable names may contain uppercase and lowercase letters (A–Z, a–z), digits (0–9), and underscores (\_), but they cannot begin with a digit. For example, each of the following is a valid Python variable name:
+• string1 
+• \_a1p4a 
+• list_of_names 
+
+The following aren’t valid variable names because they start with a digit:
+
+• 9lives
+• 99_balloons
+• 2beOrNot2Be
 
 Descriptive variable names are essential, especially for complex programs. Writing descriptive names often requires using multiple words.For example s=1000 and seconds=1000.seconds is a better name than s because it provides more context.
 
