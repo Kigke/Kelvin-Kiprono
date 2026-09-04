@@ -10,6 +10,7 @@ layout: single
 categories:
 - Python
 ---
+
 In Python, variables are names that can be assigned a value and then used to refer to that value throughout your code. Variables are fundamental to programming for two reasons:
 
 1.  Variables keep values accessible: For example, you can assign the result of some time-consuming operation to a variable so that your program doesn’t have to perform the operation each time you need to use the result.
@@ -31,14 +32,19 @@ print(greeting)
 ## Rules for Valid Variable Names
 
 Variable names can be as long or as short as you like, but there are a few rules that you must follow. Variable names may contain uppercase and lowercase letters (A–Z, a–z), digits (0–9), and underscores (\_), but they cannot begin with a digit. For example, each of the following is a valid Python variable name:
-• string1 
-• \_a1p4a 
-• list_of_names 
+
+• string1
+
+• \_a1p4a
+
+• list_of_names
 
 The following aren’t valid variable names because they start with a digit:
 
 • 9lives
+
 • 99_balloons
+
 • 2beOrNot2Be
 
 Descriptive variable names are essential, especially for complex programs. Writing descriptive names often requires using multiple words.For example s=1000 and seconds=1000.seconds is a better name than s because it provides more context.
@@ -219,7 +225,9 @@ print(type(name))
 
 ## 4. List Type
 
-**list** A list stores multiple values and is ordered and changeable (mutable).
+**list**
+
+A list stores multiple values and is ordered and changeable (mutable).
 
 
 ``` python
@@ -265,7 +273,9 @@ print(coordinates[0])
 
 ## 6. Set Type
 
-**set** A set stores unique values and does not maintain normal index-based access.
+**set**
+
+A set stores unique values and does not maintain normal index-based access.
 
 
 ``` python
@@ -314,7 +324,9 @@ print(a & b)  # Intersection
 
 ## 7. Dictionary Type
 
-**dict** A dictionary stores data as key-value pairs.
+**dict**
+
+A dictionary stores data as key-value pairs.
 
 
 ``` python
